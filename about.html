@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Master Tradelines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SORA FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- TAILWIND CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- css connect  -->
+    <link rel="stylesheet" href="style/css/main.css" />
+    <link rel="stylesheet" href="style/css/about.css">
+      <style>
+    body { font-family: 'Sora', sans-serif; }
+  </style>
+</head>
+
+<body>
+
+<header class="page-hero">
+
+  <!-- NAVBAR -->
+  <nav class="relative z-10 flex items-center justify-between px-6 lg:px-16 h-[90px]">
+
+    <!-- LOGO -->
+    <a href="home.html">
+      <img src="images/master new logo png.png"
+        class="h-[130px] opacity-95" alt="Master Tradelines">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <ul class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+      <li><a href="home.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+      <li><a href="brands.html" class="hover:text-white transition">Our Brands</a></li>
+      <li>
+         <button id="openProductsDesktop"
+           class="relative text-white/80 hover:text-white transition font-medium">
+            Products
+          </button>
+     </li>
+
+      <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+    </ul>
+
+    <!-- DESKTOP PHONE -->
+    <div class="hidden lg:flex items-center gap-4 text-white/85">
+      <div class="w-px h-9 bg-white/40"></div>
+      <i class="bi bi-telephone-fill text-lg"></i>
+      <div class="text-sm leading-tight">
+        <span class="block text-xs tracking-wide opacity-80">TOLL FREE NUMBER</span>
+        <strong class="text-base font-semibold text-white">
+          <a href="tel:18001254254">1800 1254 254</a>
+        </strong>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menuBtn"
+      class="md:hidden text-white text-2xl focus:outline-none">
+      ☰
+    </button>
+  </nav>
+      <!-- MOBILE MENU -->
+ <div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-panel">
+
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <ul class="mobile-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li>
+        <button id="openProductsMobile"
+        class="text-left text-white text-[20px] font-medium">
+         Products
+        </button>
+     </li>
+
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-phone">
+      <span>TOLL FREE NUMBER</span>
+      <strong>
+        <a href="tel:18001254254">1800 1254 254</a>
+      </strong>
+    </div>
+
+  </div>
+</div>
+  <!-- PAGE TITLE -->
+  <div class="page-hero-content">
+    <h1>About Us</h1>
+  </div>
+
+</header>
+<!-- PRODUCTS SHEET -->
+<div id="productsSheet"
+  class="fixed inset-0 bg-black z-[9999] translate-y-full transition-transform duration-500">
+
+  <!-- HEADER -->
+  <div class="h-[90px] flex items-center justify-between px-6 lg:px-16 border-b border-white/10">
+    <span class="text-lg font-semibold">Products</span>
+    <button id="closeProducts" class="text-2xl">✕</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="px-6 lg:px-16 py-14 flex flex-col gap-10">
+    <a href="showpieces.html" class="group text-3xl font-semibold">
+      Showpieces &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Decorative Items
+      </span>
+    </a>
+
+    <a href="sleep-comfort.html" class="group text-3xl font-semibold">
+      Sleep &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Comfort Products
+      </span>
+    </a>
+
+    <a href="floor-coverings.html" class="group text-3xl font-semibold">
+      Floor Coverings &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Carpets
+      </span>
+    </a>
+  </div>
+</div>
+<section class="about-intro">
+
+  <div class="about-intro-wrapper">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-intro-image">
+      <img src="images/about_welcome.jpg" alt="About Master Tradelines">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-intro-content">
+
+      <span class="about-label">ABOUT US</span>
+
+      <h2>
+        Mizoc Logistics leads the way in
+        global freight and trade support
+      </h2>
+
+      <p>
+        This is made of medical-grade orthopedic foam. Higher density
+        ensures better spinal alignment. Top grade vacuum compression
+        technology is used to make this product easy to ship globally.
+        This is made of medical-grade orthopedic foam. Higher density
+        ensures better spinal alignment. Top grade vacuum compression
+        technology is used to make this product easy to ship globally.
+        This is made of medical-grade orthopedic foam. Higher density
+        ensures better spinal alignment. Top grade vacuum compression
+        technology is used to make this product easy to ship globally.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- about us  -->
+    <section class="py-24 bg-white text-slate-900 w-full">
+        <div class="container mx-auto px-6 max-w-[1280px]">
+            
+            <!-- Grid Layout: 300px | 420px | 1fr -->
+            <div class="grid grid-cols-1 lg:grid-cols-[300px_420px_1fr] gap-x-14 gap-y-12 items-start">
+            
+                <!-- LEFT CARD -->
+                <div class="flex flex-col">
+                    <div class="relative overflow-hidden rounded-[28px] mb-5 w-full aspect-[3/4] group">
+                        <img src="images/about_page_1.jpg" 
+                             alt="Floor coverings" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    
+                    <p class="text-[15px] leading-[1.7] text-slate-600 mb-6 font-medium">
+                        Master Tradeline is a premier supplier of floor coverings and sleep
+                        products. We don't just sell items; we provide tailored solutions
+                        for homes, mosques, and offices.
+                    </p>
+    
+                    <div>
+                        <a href="#" class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-blue-600 text-blue-600 text-sm font-semibold hover:bg-blue-50 transition-colors group">
+                            Know More
+                            <span class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:bg-blue-700 transition-colors">
+                                <!-- Arrow Up Right Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- CENTER IMAGE (Tall) -->
+                <div class="h-[540px] w-full relative rounded-[28px] overflow-hidden group">
+                    <img src="images/about_page_2.jpg" 
+                         alt="Carpet rolls" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+                </div>
+    
+                <!-- RIGHT CONTENT -->
+                <div class="lg:pt-2 max-w-lg">
+                    <span class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-[13px] rounded-full mb-6 font-semibold tracking-wide uppercase">
+                        About us
+                    </span>
+    
+                    <h2 class="text-[38px] font-semibold leading-[1.2] tracking-tight mb-8 text-slate-900">
+                        Industry leader<br />
+                        headquarted
+                    </h2>
+    
+                    <!-- Info Box 1: Mission -->
+                    <div class="bg-[#f3f3f3] rounded-[18px] p-6 mb-5 border border-transparent hover:border-slate-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="text-blue-600">
+                                <!-- Target Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                            </div>
+                            <strong class="text-base text-slate-900">Our Mission</strong>
+                        </div>
+                        <p class="text-[14px] leading-[1.6] text-slate-600">
+                            Our mission is simple: To be the most reliable partner for
+                            interior solutions, ensuring every carpet laid and every mattress
+                            delivered meets the highest global standards.
+                        </p>
+                    </div>
+    
+                    <!-- Info Box 2: Vision -->
+                    <div class="bg-[#f7f7f7] rounded-[18px] p-6 border border-transparent hover:border-slate-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="text-blue-600">
+                                <!-- Eye Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </div>
+                            <strong class="text-base text-slate-900">Our Vision</strong>
+                            <span class="ml-auto text-slate-400">
+                                <!-- Arrow Right Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </span>
+                        </div>
+                        <p class="text-[14px] leading-[1.6] text-slate-600">
+                            We deliver innovative solution for businesses and communities
+                            with unmatched expertise and dedication our team.
+                        </p>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    </section>
+<script type="module" src="style/js/mobile_menu.js"></script>
+
+</body>
+</html>

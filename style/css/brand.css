@@ -1,0 +1,245 @@
+/* =========================
+   BRANDS HERO
+========================= */
+.brands-hero {
+  position: relative;
+  min-height: 520px;
+  background: url("/images/hero_bg.png") center / cover no-repeat;
+}
+
+/* overlay */
+.brands-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.15) 100%
+  );
+}
+
+.brands-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* navbar spacing fix for hero */
+.brands-nav {
+  background: transparent;
+}
+
+/* HERO TEXT */
+.brands-hero-content {
+  height: calc(100% - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands-hero-content h1 {
+  font-size: 72px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+/* =========================
+   BRAND DETAIL SECTION
+========================= */
+.brand-detail {
+  background: #000;
+  padding: 140px 0;
+  color: #fff;
+  font-family: 'Sora', sans-serif;
+}
+
+.brand-detail-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 80px;
+
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  align-items: center;
+  column-gap: 120px;
+}
+
+/* LEFT LOGO */
+.brand-logo img {
+  max-width: 260px;
+  opacity: 0.95;
+}
+
+/* RIGHT CONTENT */
+.brand-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* DESCRIPTION */
+.brand-desc {
+  position: relative;
+  padding-left: 28px;
+}
+
+.brand-line {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 2px;
+  height: 100%;
+  background: #3b4cff;
+}
+
+.brand-desc p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #eaeaea;
+  max-width: 720px;
+}
+
+/* FEATURES LIST */
+.brand-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.brand-features ul {
+  list-style: none;
+}
+
+.brand-features li {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* ICON STRIP */
+.brand-icons {
+  display: flex;
+  gap: 56px;
+  margin-top: 10px;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-item img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.9;
+}
+
+.icon-item span {
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: #cfcfcf;
+}
+/* =========================
+   BRAND SPEC SECTION
+========================= */
+.brand-spec {
+  background: #222; /* charcoal, not pure black */
+  padding: 140px 0;
+  color: #f1f1f1;
+  font-family: 'Sora', sans-serif;
+}
+
+.brand-spec-inner {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 80px;
+
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  column-gap: 120px;
+}
+
+/* LEFT */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+/* DESCRIPTION */
+.brand-desc {
+  position: relative;
+  padding-left: 28px;
+}
+
+.brand-line {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 2px;
+  height: 100%;
+  background: #4b5cff;
+}
+
+.brand-desc p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e6e6e6;
+  max-width: 720px;
+}
+
+/* FEATURES */
+.brand-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.brand-features ul {
+  list-style: none;
+}
+
+.brand-features li {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* ICON ROW */
+.brand-icons {
+  display: flex;
+  gap: 56px;
+  margin-top: 10px;
+}
+
+.brand-icons .icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icons img {
+  width: 26px;
+  height: 26px;
+}
+
+.brand-icons span {
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: #cfcfcf;
+}
+
+/* RIGHT LOGO */
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-logo img {
+  max-width: 360px;
+  opacity: 0.95;
+}

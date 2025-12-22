@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+  <title>Master Tradelines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SORA FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- TAILWIND CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- css connect  -->
+    <link rel="stylesheet" href="style/css/main.css" />
+    <link rel="stylesheet" href="style/css/brand.css" />
+  <style>
+    body { font-family: 'Sora', sans-serif; }
+  </style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="relative min-h-screen bg-cover bg-center"
+  style="background-image:url('images/hero_bg.png')">
+
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative z-10 flex items-center justify-between px-6 lg:px-16 h-[90px]">
+
+    <!-- LOGO -->
+    <a href="Home.html">
+      <img src="images/master new logo png.png"
+        class="h-[130px] opacity-95" alt="Master Tradelines">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <ul class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+      <li><a href="Home.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+      <li><a href="brands.html" class="hover:text-white transition">Our Brands</a></li>
+      <li>
+         <button id="openProductsDesktop"
+           class="relative text-white/80 hover:text-white transition font-medium">
+            Products
+          </button>
+     </li>
+
+      <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+    </ul>
+
+    <!-- DESKTOP PHONE -->
+    <div class="hidden lg:flex items-center gap-4 text-white/85">
+      <div class="w-px h-9 bg-white/40"></div>
+      <i class="bi bi-telephone-fill text-lg"></i>
+      <div class="text-sm leading-tight">
+        <span class="block text-xs tracking-wide opacity-80">TOLL FREE NUMBER</span>
+        <strong class="text-base font-semibold text-white">
+          <a href="tel:18001254254">1800 1254 254</a>
+        </strong>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menuBtn"
+      class="md:hidden text-white text-2xl focus:outline-none">
+      ☰
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+ <div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-panel">
+
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <ul class="mobile-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li>
+        <button id="openProductsMobile"
+        class="text-left text-white text-[20px] font-medium">
+         Products
+        </button>
+     </li>
+
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-phone">
+      <span>TOLL FREE NUMBER</span>
+      <strong>
+        <a href="tel:18001254254">1800 1254 254</a>
+      </strong>
+    </div>
+
+  </div>
+</div>
+
+  <!-- HERO TITLE -->
+  <div class="brands-hero-content">
+    <h1>Brands</h1>
+  </div>
+
+</section>
+</header>
+
+<!-- PRODUCTS SHEET -->
+<div id="productsSheet"
+  class="fixed inset-0 bg-black z-[9999] translate-y-full transition-transform duration-500">
+
+  <!-- HEADER -->
+  <div class="h-[90px] flex items-center justify-between px-6 lg:px-16 border-b border-white/10">
+    <span class="text-lg font-semibold">Products</span>
+    <button id="closeProducts" class="text-2xl">✕</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="px-6 lg:px-16 py-14 flex flex-col gap-10">
+    <a href="showpieces.html" class="group text-3xl font-semibold">
+      Showpieces &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Decorative Items
+      </span>
+    </a>
+
+    <a href="sleep-comfort.html" class="group text-3xl font-semibold">
+      Sleep &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Comfort Products
+      </span>
+    </a>
+
+    <a href="floor-coverings.html" class="group text-3xl font-semibold">
+      Floor Coverings &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Carpets
+      </span>
+    </a>
+  </div>
+</div>
+<section class="brand-detail">
+
+  <div class="brand-detail-container">
+
+    <!-- LEFT : LOGO -->
+    <div class="brand-logo">
+      <img src="images/dominus-logo.svg" alt="Dominus Sleepwell">
+    </div>
+
+    <!-- RIGHT : CONTENT -->
+    <div class="brand-content">
+
+      <!-- DESCRIPTION -->
+      <div class="brand-desc">
+        <span class="brand-line"></span>
+        <p>
+          This is made of medical-grade orthopedic foam. Higher density ensures better
+          spinal alignment. Top grade vacuum compression technology is used to make
+          this product easy to ship globally.
+        </p>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="brand-features">
+        <ul>
+          <li>Vacuum Compressed</li>
+          <li>Orthopedic Foam</li>
+          <li>High Density Core</li>
+        </ul>
+        <ul>
+          <li>100% Selected Fabric</li>
+          <li>Structurally Balanced</li>
+          <li>Dust Mite Proof</li>
+        </ul>
+      </div>
+
+      <!-- ICON STRIP -->
+      <div class="brand-icons">
+        <div class="icon-item">
+          <img src="icons/vacuum.svg" alt="">
+          <span>Vacuum Packed</span>
+        </div>
+        <div class="icon-item">
+          <img src="icons/medical.svg" alt="">
+          <span>Medical Grade</span>
+        </div>
+        <div class="icon-item">
+          <img src="icons/borer.svg" alt="">
+          <span>Borer Proof</span>
+        </div>
+        <div class="icon-item">
+          <img src="icons/original.svg" alt="">
+          <span>100% Original</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="brand-spec">
+
+  <div class="brand-spec-inner">
+
+    <!-- LEFT CONTENT -->
+    <div class="brand-text">
+
+      <div class="brand-desc">
+        <span class="brand-line"></span>
+        <p>
+          This is made of medical-grade orthopedic foam. Higher density ensures better
+          spinal alignment. Top grade vacuum compression technology is used to make this
+          product easy to ship globally.
+        </p>
+      </div>
+
+      <div class="brand-features">
+        <ul>
+          <li>Vacuum Compressed</li>
+          <li>Orthopedic Foam</li>
+          <li>High Density Core</li>
+        </ul>
+        <ul>
+          <li>100% Selected Fabric</li>
+          <li>Structurally Balanced</li>
+          <li>Dust Mite Proof</li>
+        </ul>
+      </div>
+
+      <!-- ICON ROW (no bg needed) -->
+      <div class="brand-icons">
+        <div class="icon">
+          <img src="icons/vacuum.svg" alt="">
+          <span>Vacuum Packed</span>
+        </div>
+        <div class="icon">
+          <img src="icons/medical.svg" alt="">
+          <span>Medical Grade</span>
+        </div>
+        <div class="icon">
+          <img src="icons/borer.svg" alt="">
+          <span>Borer Proof</span>
+        </div>
+        <div class="icon">
+          <img src="icons/original.svg" alt="">
+          <span>100% Original</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT LOGO -->
+    <div class="brand-logo">
+      <img src="images/hynite-logo.png" alt="Hynite Sleepwell">
+    </div>
+
+  </div>
+
+</section>
+<script type="module" src="style/js/mobile_menu.js"></script>
+</body>
+</html>

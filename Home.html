@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Master Tradelines</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SORA FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- TAILWIND CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- css connect  -->
+    <link rel="stylesheet" href="style/css/main.css" />
+  <style>
+    body { font-family: 'Sora', sans-serif; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+<!-- ================= HERO ================= -->
+<header class="relative min-h-screen bg-cover bg-center"
+  style="background-image:url('images/hero_bg.png')">
+
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative z-10 flex items-center justify-between px-6 lg:px-16 h-[90px]">
+
+    <!-- LOGO -->
+    <a href="Home.html">
+      <img src="images/master new logo png.png"
+        class="h-[130px] opacity-95" alt="Master Tradelines">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <ul class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+      <li><a href="Home.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+      <li><a href="brands.html" class="hover:text-white transition">Our Brands</a></li>
+      <li>
+         <button id="openProductsDesktop"
+           class="relative text-white/80 hover:text-white transition font-medium">
+            Products
+          </button>
+     </li>
+
+      <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+    </ul>
+
+    <!-- DESKTOP PHONE -->
+    <div class="hidden lg:flex items-center gap-4 text-white/85">
+      <div class="w-px h-9 bg-white/40"></div>
+      <i class="bi bi-telephone-fill text-lg"></i>
+      <div class="text-sm leading-tight">
+        <span class="block text-xs tracking-wide opacity-80">TOLL FREE NUMBER</span>
+        <strong class="text-base font-semibold text-white">
+          <a href="tel:18001254254">1800 1254 254</a>
+        </strong>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menuBtn"
+      class="md:hidden text-white text-2xl focus:outline-none">
+      ☰
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+ <div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-panel">
+
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <ul class="mobile-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li>
+        <button id="openProductsMobile"
+        class="text-left text-white text-[20px] font-medium">
+         Products
+        </button>
+     </li>
+
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-phone">
+      <span>TOLL FREE NUMBER</span>
+      <strong>
+        <a href="tel:18001254254">1800 1254 254</a>
+      </strong>
+    </div>
+
+  </div>
+</div>
+
+   
+
+  <!-- HERO CONTENT -->
+  <div class="relative z-10 px-6 lg:px-16 max-w-xl pt-24 lg:pt-0 lg:absolute lg:bottom-28">
+    <h1 class="text-4xl sm:text-5xl lg:text-[64px] font-medium leading-tight mb-6">
+      Comfort That Builds<br>Better Spaces
+    </h1>
+
+    <p class="text-base sm:text-lg text-white/90 mb-8">
+      High-quality carpets, mattresses, and furnishing products for
+      homes, offices, and religious spaces.
+    </p>
+
+    <a href="contact.html"
+      class="inline-block bg-white text-[#1b2c7a] px-8 py-3 rounded-full
+             text-sm font-semibold hover:bg-[#f4f6fb] transition">
+      Contact Us
+    </a>
+  </div>
+
+</header>
+<!-- PRODUCTS SHEET -->
+<div id="productsSheet"
+  class="fixed inset-0 bg-black z-[9999] translate-y-full transition-transform duration-500">
+
+  <!-- HEADER -->
+  <div class="h-[90px] flex items-center justify-between px-6 lg:px-16 border-b border-white/10">
+    <span class="text-lg font-semibold">Products</span>
+    <button id="closeProducts" class="text-2xl">✕</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="px-6 lg:px-16 py-14 flex flex-col gap-10">
+    <a href="showpieces.html" class="group text-3xl font-semibold">
+      Showpieces &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Decorative Items
+      </span>
+    </a>
+
+    <a href="sleep-comfort.html" class="group text-3xl font-semibold">
+      Sleep &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Comfort Products
+      </span>
+    </a>
+
+    <a href="floor-coverings.html" class="group text-3xl font-semibold">
+      Floor Coverings &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Carpets
+      </span>
+    </a>
+  </div>
+</div>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section class="bg-white text-black py-20 lg:py-28">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-16
+              grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- IMAGE -->
+    <div class="overflow-hidden rounded-br-[120px]">
+      <img src="images/about-home.png"
+           class="w-full h-full object-cover"
+           alt="About">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="max-w-xl">
+      <span class="text-xs tracking-widest text-[#c79a4b] font-medium block mb-4">
+        ABOUT US
+      </span>
+
+      <h2 class="text-3xl lg:text-[40px] font-semibold leading-snug mb-5">
+        Master Tradelines builds comfort
+        through quality and trust
+      </h2>
+
+      <p class="text-gray-600 leading-relaxed mb-10">
+        Master Tradelines delivers high-quality carpets, mattresses,
+        and furnishing products for homes, offices, and religious spaces.
+        Our focus is on durability, craftsmanship, and customer satisfaction.
+      </p>
+
+      <!-- STATS -->
+      <div class="flex flex-wrap gap-10">
+        <div>
+          <strong class="block text-3xl font-semibold">200+</strong>
+          <span class="text-sm text-gray-500">Happy Customers</span>
+        </div>
+
+        <div>
+          <strong class="block text-3xl font-semibold">6+</strong>
+          <span class="text-sm text-gray-500">Showrooms</span>
+        </div>
+
+        <div>
+          <strong class="block text-3xl font-semibold">7+</strong>
+          <span class="text-sm text-gray-500">Years of Experience</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ================= PRODUCT SECTION ================= -->
+<section class="product-section">
+  <div class="product-header">
+    <h2>Our Product</h2>
+
+    <div class="product-arrows">
+      <button class="arrow prev">←</button>
+      <button class="arrow next">→</button>
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Card 1 -->
+    <div class="product-card">
+      <div class="img-wrap">
+        <span class="count">01</span>
+        <img src="images/product-1.png" alt="">
+      </div>
+      <h3>Floor Coverings</h3>
+      <p>From initial concept development<br>and schematic design</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card">
+      <div class="img-wrap">
+        <span class="count">02</span>
+        <img src="images/product-2.png" alt="">
+      </div>
+      <h3>Comfort Products</h3>
+      <p>From initial concept development<br>and schematic design</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+      <div class="img-wrap">
+        <span class="count">03</span>
+        <img src="images/product-3.png" alt="">
+      </div>
+      <h3>Showpieces</h3>
+      <p>From initial concept development<br>and schematic design</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card">
+      <div class="img-wrap">
+        <span class="count">04</span>
+        <img src="images/product-4.png" alt="">
+      </div>
+      <h3>Vacuum-compressed<br>mattress</h3>
+      <p>From initial concept development<br>and schematic design</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= why us ================= -->
+
+<section class="why-section">
+
+  <div class="why-wrapper">
+
+    <!-- LEFT TEXT -->
+    <div class="why-text">
+      <h2>What Makes<br>Us Different</h2>
+      <p>
+        Explore our selected works that demonstrate our commitment
+        to design excellence, innovation and client satisfaction.
+      </p>
+    </div>
+
+    <!-- TOP IMAGE -->
+    <div class="why-card top-card">
+      <img src="images/WHY_US_2.png" alt="">
+      <div class="pill-wrap">
+        <span>Premium Care</span>
+        <span>High Precision</span>
+      </div>
+    </div>
+
+    <!-- LEFT BOTTOM BIG IMAGE -->
+    <div class="why-card left-big">
+      <img src="images/WHY_US_1.png" alt="">
+      <div class="overlay bottom">
+        <h3>Committed to<br>Our Mission</h3>
+        <p>Value and trust in every service we provide daily</p>
+      </div>
+    </div>
+
+    <!-- BOTTOM IMAGE -->
+    <div class="why-card bottom-card">
+      <img src="images/WHY_US_3.png" alt="">
+      <div class="overlay top">
+        <div class="stars">★★★★★</div>
+      </div>
+      <div class="overlay bottom">
+        <h3>Trusted Excellence<br>Through Customer Ratings</h3>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+
+      <div class="why-card tall-card">
+        <img src="images/WHY_US_4.png" alt="">
+        <div class="overlay center">
+          <!-- replace with your exported SVG -->
+          <img src="images/lightning.png" class="icon" alt="">
+          <h3>Reliable Solutions</h3>
+          <p>Delivering quality for long term performance</p>
+        </div>
+      </div>
+
+      <!-- CTA (ATTACHED TO TALL CARD) -->
+      <a href="#" class="why-cta">Contact Us</a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SERVICES SECTION ================= -->
+<section class="bg-white py-28 text-black">
+  <div class="max-w-7xl mx-auto px-16 grid grid-cols-2 gap-20 items-start">
+
+    <!-- LEFT -->
+    <div>
+      <span class="text-xs tracking-widest text-gray-500 uppercase">
+        Trusted expertise in every step
+      </span>
+
+      <h2 class="mt-4 text-5xl font-semibold leading-tight text-black">
+        We deliver <br>
+        <span class="text-indigo-600">Where you are</span>
+      </h2>
+
+      <div class="mt-12 overflow-hidden rounded-3xl">
+        <img
+          src="images/we_de;liver.png"
+          alt="Delivery"
+          class="w-full h-[420px] object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div>
+      <p class="text-gray-600 max-w-md mb-14">
+        We ensure strict adhere to industry regulation prioritizing
+        health, safety, and environment standard
+      </p>
+
+      <div class="grid grid-cols-2 gap-x-12 gap-y-14">
+
+        <!-- ITEM -->
+        <div>
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-indigo-50 mb-4">
+            <!-- Truck Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 17a2 2 0 104 0m-4 0a2 2 0 104 0m-4 0H5a2 2 0 01-2-2V7a2 2 0 012-2h11v6h4l2 3v1a2 2 0 01-2 2h-1" />
+            </svg>
+          </div>
+
+          <h4 class="font-semibold text-lg mb-2">
+            Safety & compliance
+          </h4>
+
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We ensure strict adhere to industry regulation prioritizing
+            health, safety, and environment standard
+          </p>
+        </div>
+
+        <!-- COPY 3 MORE (same structure) -->
+        <div>
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-indigo-50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 17a2 2 0 104 0m-4 0a2 2 0 104 0m-4 0H5a2 2 0 01-2-2V7a2 2 0 012-2h11v6h4l2 3v1a2 2 0 01-2 2h-1" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Safety & compliance</h4>
+          <p class="text-gray-600 text-sm">We ensure strict adhere to industry regulation prioritizing health, safety, and environment standard</p>
+        </div>
+
+        <div>
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-indigo-50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 17a2 2 0 104 0m-4 0a2 2 0 104 0m-4 0H5a2 2 0 01-2-2V7a2 2 0 012-2h11v6h4l2 3v1a2 2 0 01-2 2h-1" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Safety & compliance</h4>
+          <p class="text-gray-600 text-sm">We ensure strict adhere to industry regulation prioritizing health, safety, and environment standard</p>
+        </div>
+
+        <div>
+          <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-indigo-50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 17a2 2 0 104 0m-4 0a2 2 0 104 0m-4 0H5a2 2 0 01-2-2V7a2 2 0 012-2h11v6h4l2 3v1a2 2 0 01-2 2h-1" />
+            </svg>
+          </div>
+          <h4 class="font-semibold text-lg mb-2">Safety & compliance</h4>
+          <p class="text-gray-600 text-sm">We ensure strict adhere to industry regulation prioritizing health, safety, and environment standard</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ================= CTA SECTION ================= -->
+<section class="py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-16">
+
+    <!-- CTA CARD ONLY -->
+    <div
+      class="rounded-3xl px-20 py-16
+             bg-gradient-to-r from-zinc-800 to-zinc-900
+             flex items-center justify-between"
+    >
+
+      <!-- LEFT -->
+      <div class="max-w-lg">
+        <h2 class="text-white text-5xl font-semibold leading-tight">
+          Ready to get<br />
+          Our New stuff?
+        </h2>
+
+        <button
+          class="mt-10 bg-white text-black px-12 py-4 rounded-full
+                 font-medium hover:bg-gray-200 transition"
+        >
+          Connect
+        </button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="max-w-sm text-gray-300 text-sm leading-relaxed">
+        <p class="text-white font-medium mb-3">
+          stuffs for home and need
+        </p>
+        <p>
+          We’ll listen to your needs, identify the best approach and then
+          create bespoke smart solutions right for you
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-400">
+  <div class="max-w-7xl mx-auto px-16">
+
+    <!-- TOP ROW -->
+    <div class="flex items-center justify-between pt-24 pb-10">
+      <h2 class="text-4xl font-semibold text-white">
+        Let’s <span class="text-indigo-500">Connect</span> there
+      </h2>
+
+      <button
+        class="flex items-center gap-4 bg-indigo-600 text-white
+               px-8 py-4 rounded-full font-medium
+               hover:bg-indigo-700 transition"
+      >
+        Connect us now
+        <span
+          class="w-9 h-9 bg-white text-black rounded-full
+                 flex items-center justify-center text-lg"
+        >
+          →
+        </span>
+      </button>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="border-t border-white/10"></div>
+
+    <!-- MAIN GRID -->
+    <div class="grid grid-cols-4 gap-24 py-20">
+
+      <!-- BRAND -->
+      <div>
+        <img
+          src="images/master new logo png.png"
+          alt="Master Tradelines"
+          class="h-12 mb-6"
+        />
+
+        <p class="text-sm leading-relaxed mb-6 max-w-xs">
+          Visit our showroom or contact us for bulk inquiries.
+          We are here to assist you.
+        </p>
+
+        <div class="flex gap-3">
+          <span class="w-10 h-10 bg-indigo-600 rounded-full"></span>
+          <span class="w-10 h-10 bg-indigo-600 rounded-full"></span>
+          <span class="w-10 h-10 bg-indigo-600 rounded-full"></span>
+          <span class="w-10 h-10 bg-indigo-600 rounded-full"></span>
+        </div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <div>
+        <h4 class="text-white mb-6 text-sm uppercase tracking-wide">
+          navigation
+        </h4>
+        <ul class="space-y-4 text-sm">
+          <li>Home</li>
+          <li>about</li>
+          <li>brand</li>
+          <li>product</li>
+          <li>service</li>
+          <li>contact</li>
+        </ul>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div>
+        <h4 class="text-white mb-6 text-sm uppercase tracking-wide">
+          Products
+        </h4>
+        <ul class="space-y-4 text-sm">
+          <li>Showpieces & Decorative Items</li>
+          <li>Showpieces & Decorative Items</li>
+          <li>Showpieces & Decorative Items</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="text-white mb-6 text-sm uppercase tracking-wide">
+          contact
+        </h4>
+        <ul class="space-y-4 text-sm">
+          <li>navigation</li>
+          <li>navigation</li>
+          <li>navigation</li>
+          <li>navigation</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="border-t border-white/10"></div>
+
+    <div class="py-8 text-sm">
+      copyright © 2025 binocular adv. All rights reserved
+    </div>
+
+  </div>
+</footer>
+<script type="module" src="style/js/mobile_menu.js"></script>
+
+
+</body>
+</html>

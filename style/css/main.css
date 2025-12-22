@@ -1,0 +1,497 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+  font-family: 'Sora', sans-serif;
+  background: #000;
+ 
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/images/hero_bg.png") center / cover no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+  height: 90px;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 52px;
+}
+/* =========================
+   PREMIUM MOBILE MENU
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* PANEL */
+.mobile-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 85%;
+  max-width: 360px;
+  background: linear-gradient(180deg, #0b0f2a, #000);
+  padding: 36px 28px;
+  transform: translateX(100%);
+  transition: transform .4s cubic-bezier(.4,0,.2,1);
+}
+
+.mobile-menu.active .mobile-panel {
+  transform: translateX(0);
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* LINKS */
+.mobile-links {
+  list-style: none;
+  margin-top: 90px;
+}
+
+.mobile-links li {
+  margin-bottom: 28px;
+}
+
+.mobile-links a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* PHONE CARD */
+.mobile-phone {
+  margin-top: 48px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+}
+
+.mobile-phone span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: .6;
+}
+
+.mobile-phone strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.hero-content {
+  position: absolute;
+  left: 70px;
+  bottom: 120px;
+  max-width: 620px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.08;
+  margin-bottom: 22px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+  background: #fff;
+  color: #1b2c7a;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =========================
+   ABOUT (WHITE SAFE ZONE)
+========================= */
+.about-section {
+  background: #fff;
+  color: #111;
+  padding: 120px 0;
+}
+
+.about-section * {
+  color: inherit;
+}
+/* =========================
+   PRODUCT SECTION
+========================= */
+.product-section {
+  background: #fff;
+  padding: 120px 0;
+  color: #111;
+}
+
+.product-section * {
+  color: inherit;
+}
+
+.product-header {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 0 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* arrows */
+.product-arrows {
+  display: flex;
+  gap: 14px;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.arrow.next {
+  background: #000;
+  color: #fff;
+}
+
+/* grid */
+.product-grid {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 70px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* card */
+.product-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+
+.product-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* image */
+.img-wrap {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* count */
+.count {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  z-index: 2;
+}
+/* =========================
+   WHY US SECTION
+========================= */
+
+.why-section {
+  background: #fff;
+  padding: 120px 0;
+  font-family: 'Sora', sans-serif;
+  color: #111;
+}
+
+.why-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 70px;
+
+  display: grid;
+  grid-template-columns: 360px 1fr 320px;
+  grid-template-rows: 260px 260px;
+  gap: 24px;
+}
+
+/* LEFT TEXT */
+.why-text h2 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.why-text p {
+  max-width: 320px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* CARD BASE */
+.why-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.why-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* PLACEMENT */
+.top-card {
+  grid-column: 2;
+}
+
+.bottom-card {
+  grid-column: 2;
+}
+
+.left-big {
+  grid-column: 1;
+}
+
+.right-col {
+  grid-column: 3;
+  grid-row: 1 / 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tall-card {
+  width: 100%;
+  height: 100%;
+}
+
+/* PILLS */
+.pill-wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.pill-wrap span {
+  background: #fff;
+  color: #000;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
+/* OVERLAYS */
+.overlay {
+  position: absolute;
+  color: #fff;
+}
+
+.overlay.bottom {
+  bottom: 24px;
+  left: 24px;
+}
+
+.overlay.top {
+  top: 20px;
+  left: 24px;
+}
+
+.overlay.center {
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.overlay h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* STARS */
+.stars {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+/* ICON */
+.icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+}
+
+/* CTA */
+.why-cta {
+  margin-top: 28px;
+  padding: 14px 42px;
+  border-radius: 999px;
+  border: 1px solid #000;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  background: transparent;
+}
+
+/* CTA BUTTON */
+.why-cta {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.why-cta a {
+  border: 1px solid #000;
+  color: #000;
+  padding: 14px 42px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+/* =========================
+   CTA SECTION (HAS BG)
+========================= */
+.cta-section {
+  background: linear-gradient(135deg, #1c1c1c, #000);
+  padding: 80px 70px;
+  border-radius: 28px;
+  margin: 120px auto 0;
+  max-width: 1200px;
+}
+
+/* =========================
+   FOOTER (NO BG ABOVE IT)
+========================= */
+.footer {
+  background: #000;
+  padding: 100px 70px 40px;
+  color: #fff;
+}
+
+.footer * {
+  color: #bbb;
+}
+
+.footer h4 {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  font-size: 13px;
+  color: #777;
+}
