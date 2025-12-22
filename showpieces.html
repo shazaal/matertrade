@@ -18,10 +18,11 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon_io/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="images/favicon_io/android-chrome-512x512.png">
 
-  <!-- SORA FONT -->
+
+  <!-- FONTS: Sora, Italiana (for Heading), Manrope (for Content) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- BOOTSTRAP ICONS -->
   <link
@@ -33,7 +34,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
    <!-- css connect  -->
     <link rel="stylesheet" href="style/css/main.css" />
-    <link rel="stylesheet" href="style/css/brand.css" />
+    <link rel="stylesheet" href="style/css/product_page.css" />
+
   <style>
     body { font-family: 'Sora', sans-serif; }
   </style>
@@ -42,7 +44,7 @@
 
 <!-- ================= HERO ================= -->
 <header class="relative min-h-screen bg-cover bg-center"
-  style="background-image:url('images/hero_bg.png')">
+  style="background-image:url('images/product_hero.jpg')">
 
   <!-- overlay -->
   <div class="absolute inset-0 bg-black/30"></div>
@@ -121,8 +123,8 @@
 </div>
 
   <!-- HERO TITLE -->
-  <div class="brands-hero-content">
-    <h1>Brands</h1>
+  <div class="brands-hero-content text-white">
+    <h1>Showpieces & Foliage</h1>
   </div>
 
 </section>
@@ -162,126 +164,124 @@
     </a>
   </div>
 </div>
-<section class="brand-detail">
+ <!-- 3. Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Italiana', 'serif'], 
+                        'sans': ['Manrope', 'sans-serif'], 
+                    },
+                    colors: {
+                        'brand-black': '#1c1c1c',
+                        'brand-gray': '#666666',
+                        'brand-light': '#e0e0e0', 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth font rendering */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-black">
 
-  <div class="brand-detail-container">
+    <section class="w-full py-16 lg:py-24">
+        <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+            
+            <!-- SECTION HEADER -->
+            <!-- We use flex-col-reverse on mobile to put text under number if needed, 
+                 but matching the image usually implies a clean row or stacked with text top. 
+                 Let's stick to the reference: Text Left, Number Right, Bottom Aligned. -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 pb-4 mb-12">
+                
+                <!-- Left: Section Title -->
+                <h2 class="font-sans text-xl md:text-2xl text-brand-gray font-light tracking-wide mb-2 md:mb-0">
+                    Bringing nature and art indoors
+                </h2>
 
-    <!-- LEFT : LOGO -->
-    <div class="brand-logo">
-      <img src="images/dominus Logo.png" alt="Dominus Sleepwell">
-    </div>
+                <!-- Right: Huge Number -->
+                <!-- Translating the visual hierarchy: The number is very large and light -->
+                <span class="font-sans text-6xl md:text-8xl text-brand-light font-light leading-[0.8] md:-mb-2 select-none">
+                    01
+                </span>
+            </div>
 
-    <!-- RIGHT : CONTENT -->
-    <div class="brand-content">
+            <!-- PRODUCT GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8">
 
-      <!-- DESCRIPTION -->
-      <div class="brand-desc">
-        <span class="brand-line"></span>
-        <p>
-          This is made of medical-grade orthopedic foam. Higher density ensures better
-          spinal alignment. Top grade vacuum compression technology is used to make
-          this product easy to ship globally.
-        </p>
-      </div>
+                <!-- CARD 1 -->
+                <div class="group cursor-pointer">
+                    <!-- Image Wrapper -->
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
+                        <img 
+                            src="images/PRODUCT1-1.jpg" 
+                            alt="Artificial Flowers" 
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        >
+                        <!-- Optional Overlay for depth on hover -->
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+                    </div>
+                    <!-- Text Content -->
+                    <div class="space-y-1">
+                        <h3 class="font-serif text-3xl text-brand-black leading-tight">
+                            Artificial Flowers & Foliage
+                        </h3>
+                        <p class="font-sans text-sm text-brand-gray font-medium tracking-wide">
+                            Premium lifelike arrangements
+                        </p>
+                    </div>
+                </div>
 
-      <!-- FEATURES -->
-      <div class="brand-features">
-        <ul>
-          <li>Vacuum Compressed</li>
-          <li>Orthopedic Foam</li>
-          <li>High Density Core</li>
-        </ul>
-        <ul>
-          <li>100% Selected Fabric</li>
-          <li>Structurally Balanced</li>
-          <li>Dust Mite Proof</li>
-        </ul>
-      </div>
+                <!-- CARD 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
+                        <img 
+                            src="images/PRODUCT1-2.jpg" 
+                            alt="Artificial Trees" 
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="font-serif text-3xl text-brand-black leading-tight">
+                            Artificial Trees & Figurines
+                        </h3>
+                        <p class="font-sans text-sm text-brand-gray font-medium tracking-wide">
+                            Statement greenery & sculptures
+                        </p>
+                    </div>
+                </div>
 
-      <!-- ICON STRIP -->
-      <div class="brand-icons">
-        <div class="icon-item">
-          <img src="icons/vacuum.svg" alt="">
-          <span>Vacuum Packed</span>
+                <!-- CARD 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative w-full aspect-[3/4] overflow-hidden bg-gray-100 mb-6">
+                        <img 
+                            src="images/PRODUCT1-3.jpg" 
+                            alt="Flower Vases" 
+                            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        >
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+                    </div>
+                    <div class="space-y-1">
+                        <h3 class="font-serif text-3xl text-brand-black leading-tight">
+                            Flower Vases & Pots
+                        </h3>
+                        <p class="font-sans text-sm text-brand-gray font-medium tracking-wide">
+                            Ceramic, glass, and metal
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="icon-item">
-          <img src="icons/medical.svg" alt="">
-          <span>Medical Grade</span>
-        </div>
-        <div class="icon-item">
-          <img src="icons/borer.svg" alt="">
-          <span>Borer Proof</span>
-        </div>
-        <div class="icon-item">
-          <img src="icons/original.svg" alt="">
-          <span>100% Original</span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-<section class="brand-spec">
-
-  <div class="brand-spec-inner">
-
-    <!-- LEFT CONTENT -->
-    <div class="brand-text">
-
-      <div class="brand-desc">
-        <span class="brand-line"></span>
-        <p>
-          This is made of medical-grade orthopedic foam. Higher density ensures better
-          spinal alignment. Top grade vacuum compression technology is used to make this
-          product easy to ship globally.
-        </p>
-      </div>
-
-      <div class="brand-features">
-        <ul>
-          <li>Vacuum Compressed</li>
-          <li>Orthopedic Foam</li>
-          <li>High Density Core</li>
-        </ul>
-        <ul>
-          <li>100% Selected Fabric</li>
-          <li>Structurally Balanced</li>
-          <li>Dust Mite Proof</li>
-        </ul>
-      </div>
-
-      <!-- ICON ROW (no bg needed) -->
-      <div class="brand-icons">
-        <div class="icon">
-          <img src="icons/vacuum.svg" alt="">
-          <span>Vacuum Packed</span>
-        </div>
-        <div class="icon">
-          <img src="icons/medical.svg" alt="">
-          <span>Medical Grade</span>
-        </div>
-        <div class="icon">
-          <img src="icons/borer.svg" alt="">
-          <span>Borer Proof</span>
-        </div>
-        <div class="icon">
-          <img src="icons/original.svg" alt="">
-          <span>100% Original</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- RIGHT LOGO -->
-    <div class="brand-logo">
-      <img src="images/hynit Logo.png" alt="Hynite Sleepwell">
-    </div>
-
-  </div>
-
-</section>
+    </section>
   <!-- ================= CTA SECTION ================= -->
   <section class="cta-section">
     <div class="container">
@@ -440,6 +440,7 @@
 
     </div>
   </footer>
+
 <script type="module" src="style/js/mobile_menu.js"></script>
 </body>
 </html>

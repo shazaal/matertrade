@@ -32,7 +32,7 @@
 
 /* HERO TEXT */
 .brands-hero-content {
-  height: calc(100% - 90px);
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;

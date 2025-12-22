@@ -18,10 +18,11 @@
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon_io/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="images/favicon_io/android-chrome-512x512.png">
 
-  <!-- SORA FONT -->
+
+  <!-- FONTS: Sora, Italiana (for Heading), Manrope (for Content) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;500;600&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- BOOTSTRAP ICONS -->
   <link
@@ -33,16 +34,123 @@
   <script src="https://cdn.tailwindcss.com"></script>
    <!-- css connect  -->
     <link rel="stylesheet" href="style/css/main.css" />
-    <link rel="stylesheet" href="style/css/brand.css" />
+    <link rel="stylesheet" href="style/css/product_page.css" />
+
   <style>
-    body { font-family: 'Sora', sans-serif; }
+    body { 
+            font-family: 'Manrope', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+          }
+            /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        /* Container to center content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+    .product-grid {
+        padding: 0px;
+    }
+        /* --- Header Styles --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+        }
+
+        .header h2 {
+            font-family: 'Manrope', sans-serif; /* Kept clean and simple */
+            font-weight: 300; /* Light weight for that "engineered" feel */
+            font-size: 1.5rem;
+            color: #666;
+            letter-spacing: -0.5px;
+        }
+
+        .header span {
+            font-family: 'Manrope', sans-serif; /* The numbers in your image looked clean, so I used Manrope here. Change to Italiana if you prefer the serif look. */
+            font-weight: 200;
+            font-size: 2.5rem;
+            color: #ccc;
+        }
+
+        /* --- Grid Layout --- */
+        .product-grid {
+            display: grid;
+            /* 6 columns allow for the 2-up top row and 3-up bottom row */
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            row-gap: 50px; /* Added slightly more vertical space between rows */
+        }
+
+        /* --- Card Styles --- */
+        .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .card h3 {
+            /* Applying Italiana for the elegant titles */
+            font-family: 'Italiana', serif;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-weight: 400; /* Italiana usually only has 400 weight */
+            color: #111;
+            letter-spacing: 0.5px; /* Slight spacing for elegance */
+        }
+
+        .card p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 400;
+        }
+
+        /* --- Sizing Logic --- */
+        /* Top row items: Span 3 columns each (50% width) */
+        .card-large {
+            grid-column: span 3;
+        }
+
+        /* Bottom row items: Span 2 columns each (33% width) */
+        .card-small {
+            grid-column: span 2;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-large, .card-small {
+                grid-column: span 1;
+            }
+        }
   </style>
 </head>
 <body>
 
 <!-- ================= HERO ================= -->
 <header class="relative min-h-screen bg-cover bg-center"
-  style="background-image:url('images/hero_bg.png')">
+  style="background-image:url('images/product_hero.jpg')">
 
   <!-- overlay -->
   <div class="absolute inset-0 bg-black/30"></div>
@@ -121,8 +229,8 @@
 </div>
 
   <!-- HERO TITLE -->
-  <div class="brands-hero-content">
-    <h1>Brands</h1>
+  <div class="brands-hero-content text-white">
+    <h1>Sleep & Comfort</h1>
   </div>
 
 </section>
@@ -162,126 +270,61 @@
     </a>
   </div>
 </div>
-<section class="brand-detail">
+  <section class="w-full py-16 lg:py-24">
+        <div class="container mx-auto px-6 lg:px-12 max-w-7xl">
+            
+            <!-- SECTION HEADER -->
+            <!-- We use flex-col-reverse on mobile to put text under number if needed, 
+                 but matching the image usually implies a clean row or stacked with text top. 
+                 Let's stick to the reference: Text Left, Number Right, Bottom Aligned. -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-gray-200 pb-4 mb-12">
+                
+                <!-- Left: Section Title -->
+                <h2 class="font-sans text-xl md:text-2xl text-brand-gray font-light tracking-wide mb-2 md:mb-0">
+                    Durable surfaces for every space
+                </h2>
 
-  <div class="brand-detail-container">
+                <!-- Right: Huge Number -->
+                <!-- Translating the visual hierarchy: The number is very large and light -->
+                <span class="font-sans text-6xl md:text-8xl text-brand-light font-light leading-[0.8] md:-mb-2 select-none">
+                    03
+                </span>
+            </div>
 
-    <!-- LEFT : LOGO -->
-    <div class="brand-logo">
-      <img src="images/dominus Logo.png" alt="Dominus Sleepwell">
-    </div>
+ <section class="product-grid">
+            
+            <div class="card card-large">
+                <img src="images/PRODUCT3-1.jpg" alt="Luxury Mattresses">
+                <h3>Masjid Carpets</h3>
+                <p>Polypropylene • Acrylic • Polyester</p>
+            </div>
 
-    <!-- RIGHT : CONTENT -->
-    <div class="brand-content">
+            <div class="card card-large">
+                <img src="images/PRODUCT3-2.jpg" alt="Vacuum Compressed">
+                <h3>Residential Carpets</h3>
+                <p>Polypropylene • Acrylic • Polyester</p>
+            </div>
 
-      <!-- DESCRIPTION -->
-      <div class="brand-desc">
-        <span class="brand-line"></span>
-        <p>
-          This is made of medical-grade orthopedic foam. Higher density ensures better
-          spinal alignment. Top grade vacuum compression technology is used to make
-          this product easy to ship globally.
-        </p>
-      </div>
+            <div class="card card-small">
+                <img src="images/PRODUCT3-3.jpg" alt="Pillows">
+                <h3>Office & Commercial</h3>
+            </div>
 
-      <!-- FEATURES -->
-      <div class="brand-features">
-        <ul>
-          <li>Vacuum Compressed</li>
-          <li>Orthopedic Foam</li>
-          <li>High Density Core</li>
-        </ul>
-        <ul>
-          <li>100% Selected Fabric</li>
-          <li>Structurally Balanced</li>
-          <li>Dust Mite Proof</li>
-        </ul>
-      </div>
+            <div class="card card-small">
+                <img src="images/PRODUCT3-4.jpg" alt="Comforter Sets">
+                <h3>Gym Flooring Mats</h3>
+            </div>
 
-      <!-- ICON STRIP -->
-      <div class="brand-icons">
-        <div class="icon-item">
-          <img src="icons/vacuum.svg" alt="">
-          <span>Vacuum Packed</span>
+            <div class="card card-small">
+                <img src="images/PRODUCT3-5.jpg" alt="Bed Sheets">
+                <h3>Artificial Grass (Indoor/Outdoor)</h3>
+            </div>
+
+        </section>
+
+            </div>
         </div>
-        <div class="icon-item">
-          <img src="icons/medical.svg" alt="">
-          <span>Medical Grade</span>
-        </div>
-        <div class="icon-item">
-          <img src="icons/borer.svg" alt="">
-          <span>Borer Proof</span>
-        </div>
-        <div class="icon-item">
-          <img src="icons/original.svg" alt="">
-          <span>100% Original</span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-<section class="brand-spec">
-
-  <div class="brand-spec-inner">
-
-    <!-- LEFT CONTENT -->
-    <div class="brand-text">
-
-      <div class="brand-desc">
-        <span class="brand-line"></span>
-        <p>
-          This is made of medical-grade orthopedic foam. Higher density ensures better
-          spinal alignment. Top grade vacuum compression technology is used to make this
-          product easy to ship globally.
-        </p>
-      </div>
-
-      <div class="brand-features">
-        <ul>
-          <li>Vacuum Compressed</li>
-          <li>Orthopedic Foam</li>
-          <li>High Density Core</li>
-        </ul>
-        <ul>
-          <li>100% Selected Fabric</li>
-          <li>Structurally Balanced</li>
-          <li>Dust Mite Proof</li>
-        </ul>
-      </div>
-
-      <!-- ICON ROW (no bg needed) -->
-      <div class="brand-icons">
-        <div class="icon">
-          <img src="icons/vacuum.svg" alt="">
-          <span>Vacuum Packed</span>
-        </div>
-        <div class="icon">
-          <img src="icons/medical.svg" alt="">
-          <span>Medical Grade</span>
-        </div>
-        <div class="icon">
-          <img src="icons/borer.svg" alt="">
-          <span>Borer Proof</span>
-        </div>
-        <div class="icon">
-          <img src="icons/original.svg" alt="">
-          <span>100% Original</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- RIGHT LOGO -->
-    <div class="brand-logo">
-      <img src="images/hynit Logo.png" alt="Hynite Sleepwell">
-    </div>
-
-  </div>
-
-</section>
+    </section>
   <!-- ================= CTA SECTION ================= -->
   <section class="cta-section">
     <div class="container">
@@ -440,6 +483,8 @@
 
     </div>
   </footer>
+   
+
 <script type="module" src="style/js/mobile_menu.js"></script>
 </body>
 </html>

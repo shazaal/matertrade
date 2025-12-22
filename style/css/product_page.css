@@ -1,0 +1,57 @@
+    /* =========================
+   RESET
+========================= */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Apply Italiana font to the Brands Hero Title */
+    .brands-hero-content h1 {
+        font-family: 'Italiana', serif;
+        font-size: 72px;
+        /* Ensure size matches your CSS */
+        color: white;
+        text-align: center;
+    }
+    /* =========================
+   BRANDS HERO
+========================= */
+.brands-hero {
+  position: relative;
+  min-height: 520px;
+  background: url("/images/hero_bg.png") center / cover no-repeat;
+}
+
+/* overlay */
+.brands-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.15) 100%
+  );
+}
+
+.brands-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* navbar spacing fix for hero */
+.brands-nav {
+  background: transparent;
+}
+
+/* HERO TEXT */
+.brands-hero-content {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
