@@ -1,161 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep & Comfort Products</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* General Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        body {
-            /* Changing the main body font to Manrope */
-            font-family: 'Manrope', sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            padding: 40px;
-        }
+<style>
+  body {
+    font-family: 'Sora', sans-serif;
+    background: #fff;
+    color: #000;
+    margin: 0;
+  }
 
-        /* Container to center content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* ================= CONTACT SECTION ================= */
+  .contact-section {
+    max-width: 1200px;
+    margin: 160px auto 120px;
+    padding: 0 24px;
+  }
 
-        /* --- Header Styles --- */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 40px;
-        }
+  .contact-title {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
 
-        .header h2 {
-            font-family: 'Manrope', sans-serif; /* Kept clean and simple */
-            font-weight: 300; /* Light weight for that "engineered" feel */
-            font-size: 1.5rem;
-            color: #666;
-            letter-spacing: -0.5px;
-        }
+  .contact-sub {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 50px;
+    text-transform: lowercase;
+  }
 
-        .header span {
-            font-family: 'Manrope', sans-serif; /* The numbers in your image looked clean, so I used Manrope here. Change to Italiana if you prefer the serif look. */
-            font-weight: 200;
-            font-size: 2.5rem;
-            color: #ccc;
-        }
+  .contact-list {
+    border-top: 1px solid #ccc;
+  }
 
-        /* --- Grid Layout --- */
-        .product-grid {
-            display: grid;
-            /* 6 columns allow for the 2-up top row and 3-up bottom row */
-            grid-template-columns: repeat(6, 1fr);
-            gap: 30px;
-            row-gap: 50px; /* Added slightly more vertical space between rows */
-        }
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .25s ease;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
 
-        /* --- Card Styles --- */
-        .card {
-            display: flex;
-            flex-direction: column;
-        }
+  .contact-item:hover {
+    opacity: .7;
+    padding-left: 10px; /* Slight movement for interaction */
+  }
 
-        .card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            background-color: #f0f0f0;
-        }
+  .contact-item i {
+    font-size: 20px;
+  }
 
-        .card h3 {
-            /* Applying Italiana for the elegant titles */
-            font-family: 'Italiana', serif;
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-            font-weight: 400; /* Italiana usually only has 400 weight */
-            color: #111;
-            letter-spacing: 0.5px; /* Slight spacing for elegance */
-        }
+  /* ================= HIDDEN WHATSAPP FORM ================= */
+  
+  /* Initial state: Hidden with 0 height for animation */
+  #whatsapp-form-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+    border-bottom: 1px solid #ccc; /* Border appears when open */
+    border-bottom-width: 0;
+  }
 
-        .card p {
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.9rem;
-            color: #777;
-            font-weight: 400;
-        }
+  /* Active state: Visible */
+  #whatsapp-form-container.active {
+    max-height: 500px; /* Enough height to fit the form */
+    border-bottom-width: 1px;
+    padding: 40px 0;
+  }
 
-        /* --- Sizing Logic --- */
-        /* Top row items: Span 3 columns each (50% width) */
-        .card-large {
-            grid-column: span 3;
-        }
+  .wa-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
 
-        /* Bottom row items: Span 2 columns each (33% width) */
-        .card-small {
-            grid-column: span 2;
-        }
+  .input-group {
+    display: flex;
+    flex-direction: column;
+  }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            .card-large, .card-small {
-                grid-column: span 1;
-            }
-        }
-    </style>
+  /* Minimalist Input Style matching image */
+  .clean-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    outline: none;
+    background: transparent;
+    color: #333;
+  }
+
+  .clean-input::placeholder {
+    color: #999;
+    font-weight: 300;
+  }
+
+  .clean-input:focus {
+    border-bottom: 1px solid #777;
+  }
+
+  /* Centered Button Container */
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Pill Shaped Button */
+  .send-btn {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    padding: 12px 60px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .send-btn:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .contact-title {
+      font-size: 42px;
+    }
+    .wa-form-grid {
+      grid-template-columns: 1fr; /* Stack inputs on mobile */
+      gap: 20px;
+    }
+  }
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <header class="header">
-            <h2>Engineered for deep rest</h2>
-            <span>02</span>
-        </header>
+<section class="contact-section">
+    <h1 class="contact-title">
+      Contact<br>our team
+    </h1>
+    <div class="contact-sub">contact us</div>
 
-        <section class="product-grid">
+    <div class="contact-list">
+
+      <a href="mailto:info@mastertradeline.com" class="contact-item">
+        <span>Email</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+
+      <a href="tel:18001254254" class="contact-item">
+        <span>Call Now</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+
+      <div class="contact-item" onclick="toggleWhatsappForm()" style="cursor: pointer;">
+        <span>WhatsApp</span>
+        <i class="bi bi-arrow-down-right" id="wa-icon"></i>
+      </div>
+
+      <div id="whatsapp-form-container">
+        <form id="waForm" onsubmit="sendToWhatsapp(event)">
             
-            <div class="card card-large">
-                <img src="https://images.unsplash.com/photo-1505693416388-b0346efee749?auto=format&fit=crop&q=80&w=800" alt="Luxury Mattresses">
-                <h3>Luxury Mattresses</h3>
-                <p>Imported & Medical Grade</p>
+            <div class="wa-form-grid">
+                <div class="input-group">
+                    <input type="text" id="wa-name" class="clean-input" placeholder="Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="wa-place" class="clean-input" placeholder="Place" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="wa-product" class="clean-input" placeholder="Product" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="wa-number" class="clean-input" placeholder="Number" required>
+                </div>
             </div>
 
-            <div class="card card-large">
-                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=800" alt="Vacuum Compressed">
-                <h3>Vacuum-Compressed Mattresses</h3>
-                <p>Space-saving technology</p>
+            <div class="form-actions">
+                <button type="submit" class="send-btn">Send</button>
             </div>
 
-            <div class="card card-small">
-                <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?auto=format&fit=crop&q=80&w=600" alt="Pillows">
-                <h3>Pillows & Cushions</h3>
-            </div>
+        </form>
+      </div>
 
-            <div class="card card-small">
-                <img src="https://images.unsplash.com/photo-1522771753035-0a153950c6d2?auto=format&fit=crop&q=80&w=600" alt="Comforter Sets">
-                <h3>Comforter Sets</h3>
-            </div>
+      <a href="https://maps.google.com" target="_blank" class="contact-item">
+        <span>Location</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
 
-            <div class="card card-small">
-                <img src="https://images.unsplash.com/photo-1522752357352-792112150d54?auto=format&fit=crop&q=80&w=600" alt="Bed Sheets">
-                <h3>Bed Sheets & Spreads</h3>
-            </div>
-
-        </section>
     </div>
+</section>
+
+<script>
+    // 1. Toggle the Form Visibility
+    function toggleWhatsappForm() {
+        const formContainer = document.getElementById('whatsapp-form-container');
+        const icon = document.getElementById('wa-icon');
+        
+        // Toggle the active class
+        formContainer.classList.toggle('active');
+        
+        // Optional: Rotate icon or change it when open
+        if(formContainer.classList.contains('active')){
+            icon.classList.remove('bi-arrow-down-right');
+            icon.classList.remove('bi-arrow-up-right'); // ensure clean state
+            icon.classList.add('bi-x-lg'); // Change to X when open
+        } else {
+            icon.classList.remove('bi-x-lg');
+            icon.classList.add('bi-arrow-down-right');
+        }
+    }
+
+    // 2. Handle Sending to WhatsApp
+    function sendToWhatsapp(e) {
+        e.preventDefault(); // Stop page reload
+
+        // Get values from inputs
+        const name = document.getElementById('wa-name').value;
+        const place = document.getElementById('wa-place').value;
+        const product = document.getElementById('wa-product').value;
+        const number = document.getElementById('wa-number').value;
+
+        // The WhatsApp Number to send TO (Your business number)
+        // Format: No spaces, no +, include country code. 
+        // Example: 918001254254
+        const businessNumber = "918001254254"; 
+
+        // Create the message text
+        // %0a creates a new line
+        const message = `*New Inquiry via Website* %0a` +
+                        `-----------------------%0a` +
+                        `*Name:* ${name}%0a` +
+                        `*Place:* ${place}%0a` +
+                        `*Product:* ${product}%0a` +
+                        `*Contact Number:* ${number}`;
+
+        // Construct the URL
+        const whatsappUrl = `https://wa.me/${businessNumber}?text=${message}`;
+
+        // Open WhatsApp in new tab
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
 
 </body>
 </html>
