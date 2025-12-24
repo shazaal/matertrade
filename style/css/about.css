@@ -116,197 +116,393 @@ body {
 /* =========================
    ABOUT INTRO SECTION
 ========================= */
+/* =========================
+   CORE LAYOUT
+   ========================= */
 .about-intro {
   background: #ffffff;
-  padding: 120px 0;
+  padding: 80px 0; /* Reduced padding for a tighter look */
   color: #111;
+  position: relative;
 }
 
 .about-intro-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 70px;
-
-  display: grid;
-  grid-template-columns: 460px 1fr;
-  gap: 80px;
-  align-items: flex-start;
+  padding: 0 24px;
+  
+  display: flex;
+  align-items: center; /* This ensures vertical centering */
+  justify-content: center; /* Keeps everything centered */
+  gap: 60px; /* Space between image and text */
 }
 
-/* IMAGE */
+/* =========================
+   IMAGE - THE FIX
+   ========================= */
 .about-intro-image {
-  border-radius: 28px;
+  flex: 0 0 50%; /* Image takes 50% width */
+  max-width: 550px; /* Prevents it from getting too huge */
+  
+  /* CRITICAL FIX: This forces the image to be a nice rectangle, not a tall strip */
+  aspect-ratio: 4 / 3; 
+  /* If the browser doesn't support aspect-ratio, we limit height: */
+  max-height: 450px; 
+  
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); /* Nice shadow for depth */
+  position: relative;
 }
 
 .about-intro-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* This crops the tall image to fit the new box perfectly */
   display: block;
+  transition: transform 0.5s ease;
 }
 
-/* CONTENT */
+/* Hover Animation: Slight zoom */
+.about-intro-image:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTENT SIDE
+   ========================= */
 .about-intro-content {
-  max-width: 640px;
+  flex: 0 0 45%; /* Text takes 45% width */
 }
 
-/* LABEL */
+/* GOLD LABEL */
 .about-label {
   display: inline-block;
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 1.6px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #c79a4b;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 45px;
 }
 
-/* HEADING */
+.about-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 35px;
+  height: 2px;
+  background-color: #c79a4b;
+}
+
+/* HEADLINE */
 .about-intro-content h2 {
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 1.25;
+  font-size: 46px; /* Slightly larger for impact */
+  font-weight: 700;
+  line-height: 1.15;
   margin-bottom: 24px;
-  color: #000;
+  color: #0e1118;
+}
+
+.about-intro-content h2 .highlight {
+  color: #c79a4b;
 }
 
 /* PARAGRAPH */
 .about-intro-content p {
-  font-size: 16px;
-  line-height: 1.75;
-  color: #666;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+/* =========================
+   BUTTON STYLE
+   ========================= */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px 12px 28px; /* Padding for pill shape */
+  background-color: #0e1118;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 60px;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+/* The Circle Arrow */
+.btn-primary .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  color: #0e1118;
+  border-radius: 50%;
+  margin-left: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Button Hover */
+.btn-primary:hover {
+  background-color: #c79a4b; /* Changes to Gold */
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover .arrow {
+  background: #0e1118;
+  color: #fff;
+  transform: rotate(-45deg); /* Cool rotation effect */
+}
+
+/* =========================
+   RESPONSIVE (Mobile)
+   ========================= */
+@media (max-width: 992px) {
+  .about-intro-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .about-intro-image, 
+  .about-intro-content {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* On mobile, we let the image be a bit shorter */
+  .about-intro-image {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .about-label {
+    padding-left: 0;
+  }
+  .about-label::before {
+    display: none;
+  }
+  
+  .about-intro-content h2 {
+    font-size: 34px;
+  }
+  
+  .btn-primary {
+    margin: 0 auto; /* Center button */
+  }
 }
 /* about us   */
 /* =========================
    ABOUT – INDUSTRY LEADER (FIXED)
 ========================= */
-
+/* =========================
+   SECTION LAYOUT
+   ========================= */
 .about-leader {
-  background: #fff;
-  padding: 120px 0;
-  color: #111;
+  background: #ffffff;
+  padding: 100px 0;
+  color: #0f172a; /* Slate 900 */
+  font-family: sans-serif; /* Replace with your specific font */
 }
 
 .about-leader-wrapper {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 70px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
 
+  /* THE GRID FIX */
   display: grid;
-  grid-template-columns: 300px 420px 1fr; /* 🔥 KEY FIX */
-  gap: 56px;
+  /* 280px Left | 400px Center | Remaining space Right */
+  grid-template-columns: 280px 400px 1fr; 
+  gap: 50px; /* Even spacing between columns */
   align-items: start;
 }
 
-/* LEFT CARD */
-.about-card img {
+/* =========================
+   LEFT COLUMN
+   ========================= */
+.col-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-image-container {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4; /* Standard portrait ratio */
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.left-image-container img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 28px;
-  margin-bottom: 18px;
+  transition: transform 0.5s ease;
 }
 
-.about-card p {
+.left-image-container:hover img {
+  transform: scale(1.05);
+}
+
+.intro-text {
   font-size: 15px;
-  line-height: 1.7;
-  color: #666;
-  margin-bottom: 22px;
+  line-height: 1.6;
+  color: #475569; /* Slate 600 */
+  margin-bottom: 24px;
+  font-weight: 500;
 }
 
-.know-more {
+/* BUTTON */
+.know-more-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 18px;
-  border-radius: 999px;
+  padding: 8px 8px 8px 20px; /* Padding adjusted for pill shape */
+  border-radius: 50px;
   border: 1px solid #2563eb;
   color: #2563eb;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: fit-content;
 }
 
-.know-more span {
-  width: 28px;
-  height: 28px;
+.know-more-btn .btn-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #2563eb;
   border-radius: 50%;
-  background: #2563eb;
-  color: #fff;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
 }
 
-/* CENTER IMAGE (CRITICAL) */
-.about-image-tall {
-  height: 540px; /* 🔥 IMPORTANT */
+.know-more-btn:hover {
+  background-color: #eff6ff;
 }
 
-.about-image-tall img {
+.know-more-btn:hover .btn-icon {
+  transform: rotate(45deg);
+}
+
+/* =========================
+   CENTER COLUMN (TALL IMAGE)
+   ========================= */
+.col-center {
+  height: 560px; /* Fixed height to anchor the section */
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.col-center img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 28px;
 }
 
-/* RIGHT CONTENT */
-.about-info {
-  max-width: 520px;
+/* =========================
+   RIGHT COLUMN
+   ========================= */
+.col-right {
+  padding-top: 10px; /* Align slightly with top of images */
 }
 
 .about-pill {
   display: inline-block;
-  padding: 6px 14px;
-  background: #eef4ff;
+  padding: 6px 16px;
+  background: #eff6ff;
   color: #2563eb;
-  font-size: 13px;
-  border-radius: 999px;
-  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
 }
 
-.about-info h2 {
-  font-size: 38px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin-bottom: 28px;
+.col-right h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  color: #0f172a;
 }
 
-/* INFO BOXES (LIGHTER LIKE REFERENCE) */
+/* INFO BOXES */
 .info-box {
-  background: #f7f7f7;
-  border-radius: 18px;
-  padding: 22px 26px;
-  margin-bottom: 16px;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.info-box.active {
-  background: #f3f3f3;
+/* Specific colors for visual separation */
+.info-box.mission {
+  background-color: #f1f5f9; /* Slightly darker grey */
+}
+
+.info-box.vision {
+  background-color: #f8fafc; /* Very light grey */
+}
+
+.info-box:hover {
+  border-color: #cbd5e1;
 }
 
 .info-head {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.icon-circle {
+  color: #2563eb;
+  display: flex;
+  align-items: center;
 }
 
 .info-head strong {
   font-size: 16px;
-}
-
-.info-head .icon {
-  color: #2563eb;
-  font-size: 18px;
-}
-
-.info-head .arrow {
-  margin-left: auto;
-  color: #bbb;
+  color: #0f172a;
 }
 
 .info-box p {
   font-size: 14px;
   line-height: 1.6;
-  color: #666;
+  color: #64748b;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 1024px) {
+  .about-leader-wrapper {
+    grid-template-columns: 1fr; /* Stack everything */
+    max-width: 600px;
+    gap: 40px;
+  }
+
+  .col-center {
+    height: 400px; /* Shorter on mobile */
+  }
+  
+  .col-left {
+    order: 2; /* Put text below big image on mobile? Optional. */
+  }
 }
