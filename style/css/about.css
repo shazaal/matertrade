@@ -132,38 +132,38 @@ body {
   padding: 0 24px;
   
   display: flex;
-  align-items: center; /* This ensures vertical centering */
-  justify-content: center; /* Keeps everything centered */
-  gap: 60px; /* Space between image and text */
+  align-items: center;
+  justify-content: center; 
+  gap: 60px; 
 }
 
 /* =========================
    IMAGE - THE FIX
    ========================= */
 .about-intro-image {
-  flex: 0 0 50%; /* Image takes 50% width */
-  max-width: 550px; /* Prevents it from getting too huge */
+  flex: 0 0 50%; 
+  max-width: 550px; 
   
-  /* CRITICAL FIX: This forces the image to be a nice rectangle, not a tall strip */
+  
   aspect-ratio: 4 / 3; 
-  /* If the browser doesn't support aspect-ratio, we limit height: */
+  
   max-height: 450px; 
   
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); /* Nice shadow for depth */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); 
   position: relative;
 }
 
 .about-intro-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This crops the tall image to fit the new box perfectly */
+  object-fit: cover; 
   display: block;
   transition: transform 0.5s ease;
 }
 
-/* Hover Animation: Slight zoom */
+
 .about-intro-image:hover img {
   transform: scale(1.05);
 }
@@ -300,13 +300,11 @@ body {
     margin: 0 auto; /* Center button */
   }
 }
-/* about us   */
+
 /* =========================
-   ABOUT – INDUSTRY LEADER (FIXED)
+   ABOUT – INDUSTRY LEADER 
 ========================= */
-/* =========================
-   SECTION LAYOUT
-   ========================= */
+
 .about-leader {
   background: #ffffff;
   padding: 100px 0;
@@ -337,7 +335,7 @@ body {
 
 .left-image-container {
   width: 100%;
-  aspect-ratio: 3 / 4; /* Standard portrait ratio */
+  aspect-ratio: 3 / 4; 
   border-radius: 24px;
   overflow: hidden;
   margin-bottom: 24px;
@@ -357,7 +355,7 @@ body {
 .intro-text {
   font-size: 15px;
   line-height: 1.6;
-  color: #475569; /* Slate 600 */
+  color: #475569; 
   margin-bottom: 24px;
   font-weight: 500;
 }
@@ -367,7 +365,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 8px 8px 20px; /* Padding adjusted for pill shape */
+  padding: 8px 8px 8px 20px;
   border-radius: 50px;
   border: 1px solid #2563eb;
   color: #2563eb;
@@ -402,7 +400,7 @@ body {
    CENTER COLUMN (TALL IMAGE)
    ========================= */
 .col-center {
-  height: 560px; /* Fixed height to anchor the section */
+  height: 560px; 
   border-radius: 28px;
   overflow: hidden;
   position: relative;
@@ -418,7 +416,7 @@ body {
    RIGHT COLUMN
    ========================= */
 .col-right {
-  padding-top: 10px; /* Align slightly with top of images */
+  padding-top: 10px; 
 }
 
 .about-pill {
@@ -450,13 +448,13 @@ body {
   border: 1px solid transparent;
 }
 
-/* Specific colors for visual separation */
+
 .info-box.mission {
-  background-color: #f1f5f9; /* Slightly darker grey */
+  background-color: #f1f5f9; 
 }
 
 .info-box.vision {
-  background-color: #f8fafc; /* Very light grey */
+  background-color: #f8fafc; 
 }
 
 .info-box:hover {
@@ -493,16 +491,16 @@ body {
    ========================= */
 @media (max-width: 1024px) {
   .about-leader-wrapper {
-    grid-template-columns: 1fr; /* Stack everything */
+    grid-template-columns: 1fr; 
     max-width: 600px;
     gap: 40px;
   }
 
   .col-center {
-    height: 400px; /* Shorter on mobile */
+    height: 400px; 
   }
   
   .col-left {
-    order: 2; /* Put text below big image on mobile? Optional. */
+    order: 2; 
   }
 }
