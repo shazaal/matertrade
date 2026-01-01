@@ -1,0 +1,262 @@
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/images/hero_bg.png") center / cover no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+  height: 90px;
+  padding: 0 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 52px;
+}
+/* =========================
+   PREMIUM MOBILE MENU
+========================= */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* PANEL */
+.mobile-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 85%;
+  max-width: 360px;
+  background: linear-gradient(180deg, #0b0f2a, #000);
+  padding: 36px 28px;
+  transform: translateX(100%);
+  transition: transform .4s cubic-bezier(.4,0,.2,1);
+}
+
+.mobile-menu.active .mobile-panel {
+  transform: translateX(0);
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* LINKS */
+.mobile-links {
+  list-style: none;
+  margin-top: 90px;
+}
+
+.mobile-links li {
+  margin-bottom: 28px;
+}
+
+.mobile-links a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* PHONE CARD */
+.mobile-phone {
+  margin-top: 48px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+}
+
+.mobile-phone span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: .6;
+}
+
+.mobile-phone strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+/* FORCE GRID GAP */
+#gallery-grid {
+    display: grid;
+    /* Forces a 32px gap horizontally and vertically */
+    gap: 32px !important; 
+    width: 100%;
+}
+
+/* FILTER BUTTONS (Premium Pill Style) */
+.filter-btn {
+    padding: 12px 32px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #4b5563;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.filter-btn.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* ANIMATION CLASSES */
+.gallery-item {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-item.hide {
+    display: none; /* Removes from grid flow */
+}
+.gallery-item.show {
+    display: block; /* Returns to grid flow */
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* =========================
+   1. GRID LAYOUT & GAPS
+========================= */
+#gallery-grid {
+    display: grid;
+    /* This !important forces the gap even if Tailwind tries to remove it */
+    gap: 32px !important; 
+    width: 100%;
+}
+
+/* =========================
+   2. PREMIUM FILTER BUTTONS
+========================= */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    /* Base Shape */
+    padding: 12px 32px;
+    border-radius: 999px; /* Pill shape */
+    border: 1px solid #e2e8f0; /* Light gray border */
+    background-color: #ffffff;
+    
+    /* Typography */
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* Interaction */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-btn:hover {
+    border-color: #0f172a;
+    color: #0f172a;
+    transform: translateY(-2px);
+}
+
+/* The Active State (When clicked) */
+.filter-btn.active {
+    background-color: #0f172a; /* Dark background */
+    color: #ffffff; /* White text */
+    border-color: #0f172a;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+}
+
+/* =========================
+   3. GALLERY ITEM ANIMATIONS
+========================= */
+.gallery-item {
+    /* Smooth movement when grid reshuffles */
+    transition: all 0.5s ease;
+}
+
+/* Hidden State */
+.gallery-item.hide {
+    display: none; 
+}
+
+/* Visible State */
+.gallery-item.show {
+    display: block;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Animation Keyframes */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.98); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+.filter-container {
+    margin-top: 80px; /* Adjust this number to increase the gap */
+}

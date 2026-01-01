@@ -2,211 +2,414 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>About Us | Master Tradelines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Trade | Product Showcase</title>
+
+     <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+
+  <!-- Android / PWA -->
+  <link rel="manifest" href="images/favicon_io/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon_io/android-chrome-512x512.png">
+
+
+  <!-- SORA FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- TAILWIND CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #28257C;
-      --slate: #0f172a;
-    }
+   <!-- css connect  -->
+    <!-- <link rel="stylesheet" href="style/css/main.css" /> -->
+    <link rel="stylesheet" href="style/css/product_page.css" />
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #fcfcfc;
-      color: var(--slate);
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    /* Reveal Animations */
-    .reveal-wrapper { 
-      overflow: hidden; 
-      position: relative;
-    }
     
-    .reveal-content {
-      transform: translateY(110%);
-      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    
-    .active .reveal-content { 
-      transform: translateY(0); 
-    }
-
-    /* Image Mask Reveal - Reinforced Container Clipping */
-    .img-reveal-container {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      border-radius: 1rem;
-    }
-
-    .img-mask {
-      clip-path: inset(0 100% 0 0);
-      transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
-      width: 100%;
-      height: 100%;
-    }
-    
-    .active .img-mask {
-      clip-path: inset(0 0 0 0);
-    }
-
-    /* PREMIUM VISUAL GALLERY STYLES */
-    .visual-tile {
-      position: relative;
-      overflow: hidden; /* Strict border containment */
-      border-radius: 1rem;
-      background: #f8fafc;
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    
-    .visual-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%);
-      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), filter 0.8s ease;
-      display: block;
-    }
-
-    .visual-tile:hover img {
-      filter: grayscale(0%);
-      transform: scale(1.05); /* Subtle zoom stays within borders */
-    }
-
-    .visual-tile:hover {
-      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
-      transform: translateY(-4px);
-    }
-
-    .tile-overlay {
-      background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-
-    .visual-tile:hover .tile-overlay {
-      opacity: 1;
-    }
-  </style>
-</head>
-<body class="antialiased">
-
-
-
-    <!-- COMPACT SECTION DESIGN -->
-    <section id="gallery-preview" class=" antialiased py-20 px-6 md:px-20 lg:px-32 bg-white overflow-hidden">
-      <div class="max-w-[1100px] mx-auto">
-        
-        <!-- Compact Showcase Header -->
-        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
-          <div class="reveal-wrapper active">
-            <div class="reveal-content">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-blue-500 font-bold text-[9px] tracking-[0.4em] uppercase">The Collection</span>
-                <div class="h-px w-8 bg-slate-200"></div>
-              </div>
-             
-            </div>
-          </div>
-          <div class="reveal-wrapper active">
-            <div class="reveal-content pb-1">
-              <a href="gallery.html" class="group flex items-center gap-3 text-[9px] font-bold uppercase tracking-widest">
-                Browse Collection
-                <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center group-hover:bg-blue-500 transition-all duration-500 transform group-hover:rotate-45">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stable Grid - Controlled Proportions -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-          
-          <!-- Image 1: Main Feature (Landscape) -->
-          <div class="md:col-span-8 aspect-[16/9] md:aspect-[1.8/1] visual-tile reveal-wrapper active">
-            <div class="reveal-content h-full img-reveal-container">
-              <div class="img-mask">
-                <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125540_IMG_0974.JPG" alt="Industrial Logistics">
-              </div>
-              <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end">
-                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em] mb-1">Import Hub</span>
-                <p class="text-white text-lg font-bold tracking-tight">Heavy Logistics Units</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image 2: Secondary (Compact Square) -->
-          <div class="md:col-span-4 aspect-square md:aspect-auto visual-tile reveal-wrapper active" style="transition-delay: 0.1s;">
-            <div class="reveal-content h-full img-reveal-container">
-              <div class="img-mask">
-                <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125540_IMG_0974.JPG" alt="Technology">
-              </div>
-              <div class="tile-overlay absolute inset-0 p-5 flex flex-col justify-end">
-                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Electronics</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Small Square Grid Duo -->
-          <div class="md:col-span-3 aspect-square visual-tile reveal-wrapper active" style="transition-delay: 0.2s;">
-            <div class="reveal-content h-full img-reveal-container">
-              <div class="img-mask">
-                <img src="images/Grass Mat-20251230T095742Z-3-001/Grass Mat/grass 1.jpg" alt="Textiles">
-              </div>
-              <div class="tile-overlay absolute inset-0 p-4 flex flex-col justify-end">
-                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Textiles</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image 4: Landscape Secondary -->
-          <div class="md:col-span-5 aspect-[16/9] md:aspect-auto visual-tile reveal-wrapper active" style="transition-delay: 0.3s;">
-            <div class="reveal-content h-full img-reveal-container">
-              <div class="img-mask">
-                <img src="images/Masjid-20251230T095752Z-3-001/Masjid/20220125_191126 (1).jpg" alt="Infrastructure">
-              </div>
-              <div class="tile-overlay absolute inset-0 p-5 flex flex-col justify-end">
-                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Infrastructure</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image 5: Balanced End Item -->
-          <div class="md:col-span-4 aspect-[16/9] md:aspect-auto visual-tile reveal-wrapper active" style="transition-delay: 0.4s;">
-            <div class="reveal-content h-full img-reveal-container">
-              <div class="img-mask">
-                <img src="images/Rigs-20251230T095835Z-3-001/Rigs/20220110124242_IMG_0955.JPG" alt="Automotive">
-              </div>
-              <div class="tile-overlay absolute inset-0 p-5 flex flex-col justify-end">
-                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Hardware</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
- 
-
-
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+    <style>
+        .img-mask { overflow: hidden; position: relative; height: 100%; width: 100%; }
+        .img-mask img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
         }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal-wrapper').forEach(el => observer.observe(el));
-  </script>
+        .visual-tile:hover img { transform: scale(1.08); }
+        .tile-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.4s ease;
+        }
+        .visual-tile:hover .tile-overlay { opacity: 1; }
+        
+        /* Smooth reveal for items */
+        .gallery-item { display: block; animation: fadeIn 0.6s ease forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+   <!-- ================= HERO ================= -->
+<header class="relative min-h-screen bg-cover bg-center"
+  style="background-image:url('images/product_hero.jpg')">
+
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative z-10 flex items-center justify-between px-6 lg:px-16 h-[90px]">
+
+    <!-- LOGO -->
+    <a href="Home.html">
+      <img src="images/master new logo png.png"
+        class="h-[130px] opacity-95" alt="Master Tradelines">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <ul class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+      <li><a href="Home.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+      <li><a href="brands.html" class="hover:text-white transition">Our Brands</a></li>
+      <li>
+         <button id="openProductsDesktop"
+           class="relative text-white/80 hover:text-white transition font-medium">
+            Products
+          </button>
+     </li>
+
+      <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+    </ul>
+
+    <!-- DESKTOP PHONE -->
+    <div class="hidden lg:flex items-center gap-4 text-white/85">
+      <div class="w-px h-9 bg-white/40"></div>
+      <i class="bi bi-telephone-fill text-lg"></i>
+      <div class="text-sm leading-tight">
+        <span class="block text-xs tracking-wide opacity-80">TOLL FREE NUMBER</span>
+        <strong class="text-base font-semibold text-white">
+          <a href="tel:18001254254">1800 1254 254</a>
+        </strong>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menuBtn"
+      class="md:hidden text-white text-2xl focus:outline-none">
+      ☰
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+ <div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-panel">
+
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <ul class="mobile-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li>
+        <button id="openProductsMobile"
+        class="text-left text-white text-[20px] font-medium">
+         Products
+        </button>
+     </li>
+
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-phone">
+      <span>TOLL FREE NUMBER</span>
+      <strong>
+        <a href="tel:18001254254">1800 1254 254</a>
+      </strong>
+    </div>
+
+  </div>
+</div>
+
+  <!-- HERO TITLE -->
+  <div class="brands-hero-content text-white">
+    <h1>Gallery</h1>
+  </div>
+
+</section>
+</header>
+
+<!-- PRODUCTS SHEET -->
+<div id="productsSheet"
+  class="text-white fixed inset-0 bg-black z-[9999] translate-y-full transition-transform duration-500">
+
+  <!-- HEADER -->
+  <div class="h-[90px] flex items-center justify-between px-6 lg:px-16 border-b border-white/10">
+    <span class="text-lg font-semibold text-white">Products</span>
+    <button id="closeProducts" class="text-2xl text-white">✕</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="px-6 lg:px-16 py-14 flex flex-col gap-10">
+    <a href="showpieces.html" class="group text-3xl font-semibold text-white">
+      Showpieces &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Decorative Items
+      </span>
+    </a>
+
+    <a href="sleep-comfort.html" class="group text-3xl font-semibold text-white">
+      Sleep &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Comfort Products
+      </span>
+    </a>
+
+    <a href="floor-coverings.html" class="group text-3xl font-semibold text-white">
+      Floor Coverings &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Carpets
+      </span>
+    </a>
+    <a href="Masjid_carpet.html" class="group text-3xl font-semibold">
+        Masjid Carpets
+        <span class="block text-lg text-white/60 group-hover:text-white transition">
+
+        </span>
+      </a>
+  </div>
+</div>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-12 px-6">
+        <button onclick="filterSelection('all')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">All</button>
+        <button onclick="filterSelection('Masjid Carpet')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Masjid Carpet</button>
+        <button onclick="filterSelection('Floor coverings')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Floor coverings</button>
+        <button onclick="filterSelection('show pieces')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">show pieces</button>
+        <button onclick="filterSelection('Comfort Products')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Comfort Products</button>
+    </div>
+
+    <main class="max-w-[1400px] mx-auto px-6 pb-20">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            
+            <div class="gallery-item Floor coverings md:col-span-6 aspect-video visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125520_IMG_0973.JPG" alt="Logistics">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-8 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Floor coverings</span>
+                    <h3 class="text-white text-xl font-bold">Main Distribution Hub</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item Floor coverings md:col-span-3 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125540_IMG_0974.JPG" alt="Textiles">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Textiles</span>
+                </div>
+            </div>
+
+            <div class="gallery-item Floor coverings md:col-span-3 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125605_IMG_0975.JPG" alt="Infrastructure">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Infrastructure</span>
+                </div>
+            </div>
+
+            <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125623_IMG_0976.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+            <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125642_IMG_0977.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125704_IMG_0978.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125723_IMG_0979.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125739_IMG_0980.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125754_IMG_0981.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125812_IMG_0982.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125832_IMG_0983.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125848_IMG_0984.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125907_IMG_0985.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125925_IMG_0986.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                              <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125955_IMG_0987.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                              <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110130025_IMG_0988.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+            <!-- masjid carpet  -->
+                                           <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/20220125_191126 (1).jpg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                             <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/20220125_192007.jpg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/BILAL JUMAH MASJID KHANANGAD.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/EDARIKODE.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/Parappa juma masjid.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/SALAFI masjid THRIKKARIPUR.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                         
+            </div>
+    </main>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[999] hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-10 right-10 text-white text-4xl">&times;</button>
+        <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain">
+    </div>
+
+    <script>
+        // Filtering Logic
+        function filterSelection(category) {
+            const items = document.getElementsByClassName("gallery-item");
+            if (category == "all") category = "";
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.display = "none";
+                if (items[i].className.indexOf(category) > -1) {
+                    items[i].style.display = "block";
+                }
+            }
+        }
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            document.getElementById("lightbox-img").src = src;
+            document.getElementById("lightbox").classList.remove("hidden");
+        }
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.add("hidden");
+        }
+    </script>
 </body>
 </html>

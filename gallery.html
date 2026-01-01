@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Collection | Full Gallery</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+
+  <!-- Android / PWA -->
+  <link rel="manifest" href="images/favicon_io/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon_io/android-chrome-512x512.png">
+
+
+  <!-- SORA FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- TAILWIND CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+   <!-- css connect  -->
+    <!-- <link rel="stylesheet" href="style/css/main.css" /> -->
+    <link rel="stylesheet" href="style/css/product_page.css" />
+    <link rel="stylesheet" href="style/css/gallery.css"/>
+
+    
+<style>
         .img-mask { overflow: hidden; position: relative; height: 100%; width: 100%; }
         .img-mask img { 
             width: 100%; height: 100%; object-fit: cover; 
@@ -28,13 +60,136 @@
 </head>
 <body class="bg-gray-50">
 
-    <header class="pt-24 pb-12 px-6 text-center">
-        <span class="text-blue-500 font-bold text-[10px] tracking-[0.5em] uppercase mb-4 block">Archive</span>
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">The Full Collection</h1>
-        <p class="mt-4 text-slate-500 max-w-xl mx-auto text-sm">Explore our comprehensive range of industrial logistics, premium textiles, and infrastructure solutions.</p>
-    </header>
+   <!-- ================= HERO ================= -->
+<header class="relative min-h-screen bg-cover bg-center"
+  style="background-image:url('images/product_hero.jpg')">
 
-    <div class="flex flex-wrap justify-center gap-4 mb-12 px-6">
+  <!-- overlay -->
+  <div class="absolute inset-0 bg-black/30"></div>
+
+  <!-- NAVBAR -->
+  <nav class="relative z-10 flex items-center justify-between px-6 lg:px-16 h-[90px]">
+
+    <!-- LOGO -->
+    <a href="Home.html">
+      <img src="images/master new logo png.png"
+        class="h-[130px] opacity-95" alt="Master Tradelines">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <ul class="hidden md:flex gap-8 text-sm font-medium text-white/80">
+      <li><a href="Home.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+      <li><a href="brands.html" class="hover:text-white transition">Our Brands</a></li>
+      <li>
+         <button id="openProductsDesktop"
+           class="relative text-white/80 hover:text-white transition font-medium">
+            Products
+          </button>
+     </li>
+
+      <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+    </ul>
+
+    <!-- DESKTOP PHONE -->
+    <div class="hidden lg:flex items-center gap-4 text-white/85">
+      <div class="w-px h-9 bg-white/40"></div>
+      <i class="bi bi-telephone-fill text-lg"></i>
+      <div class="text-sm leading-tight">
+        <span class="block text-xs tracking-wide opacity-80">TOLL FREE NUMBER</span>
+        <strong class="text-base font-semibold text-white">
+          <a href="tel:18001254254">1800 1254 254</a>
+        </strong>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menuBtn"
+      class="md:hidden text-white text-2xl focus:outline-none">
+      ☰
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+ <div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-panel">
+
+    <button id="closeMenu" class="close-btn">✕</button>
+
+    <ul class="mobile-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="brands.html">Our Brands</a></li>
+      <li>
+        <button id="openProductsMobile"
+        class="text-left text-white text-[20px] font-medium">
+         Products
+        </button>
+     </li>
+
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="mobile-phone">
+      <span>TOLL FREE NUMBER</span>
+      <strong>
+        <a href="tel:18001254254">1800 1254 254</a>
+      </strong>
+    </div>
+
+  </div>
+</div>
+
+  <!-- HERO TITLE -->
+  <div class="brands-hero-content text-white">
+    <h1>Gallery</h1>
+  </div>
+
+</section>
+</header>
+
+<!-- PRODUCTS SHEET -->
+<div id="productsSheet"
+  class="text-white fixed inset-0 bg-black z-[9999] translate-y-full transition-transform duration-500">
+
+  <!-- HEADER -->
+  <div class="h-[90px] flex items-center justify-between px-6 lg:px-16 border-b border-white/10">
+    <span class="text-lg font-semibold text-white">Products</span>
+    <button id="closeProducts" class="text-2xl text-white">✕</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="px-6 lg:px-16 py-14 flex flex-col gap-10">
+    <a href="showpieces.html" class="group text-3xl font-semibold text-white">
+      Showpieces &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Decorative Items
+      </span>
+    </a>
+
+    <a href="sleep-comfort.html" class="group text-3xl font-semibold text-white">
+      Sleep &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Comfort Products
+      </span>
+    </a>
+
+    <a href="floor-coverings.html" class="group text-3xl font-semibold text-white">
+      Floor Coverings &
+      <span class="block text-lg text-white/60 group-hover:text-white transition">
+        Carpets
+      </span>
+    </a>
+    <a href="Masjid_carpet.html" class="group text-3xl font-semibold">
+        Masjid Carpets
+        <span class="block text-lg text-white/60 group-hover:text-white transition">
+
+        </span>
+      </a>
+  </div>
+</div>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-12 px-6 mt-16">
         <button onclick="filterSelection('all')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">All</button>
         <button onclick="filterSelection('Masjid Carpet')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Masjid Carpet</button>
         <button onclick="filterSelection('Floor coverings')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Floor coverings</button>
@@ -235,7 +390,167 @@
         <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain">
     </div>
 
-    <script>
+ 
+
+  <!-- ================= CTA SECTION ================= -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <!-- LEFT -->
+        <div class="cta-left">
+          <h2 class="cta-heading">
+            Ready to get<br>
+            Our New stuff?
+          </h2>
+          <button class="btn-white">Connect</button>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="cta-right">
+          <strong>stuffs for home and need</strong>
+          <p>
+            We’ll listen to your needs, identify the best approach and then
+            create bespoke smart solutions right for you
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER SECTION ================= -->
+  <footer class="footer-section">
+    <div class="container">
+
+      <!-- TOP ROW -->
+      <div class="footer-top">
+        <h2 class="footer-heading">
+          Let’s <span class="text-indigo">Connect</span> there
+        </h2>
+        <button class="btn-footer">
+          Connect us now
+          <span class="icon-circle-white">→</span>
+        </button>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="footer-divider"></div>
+
+      <!-- MAIN GRID -->
+      <div class="footer-grid">
+
+        <!-- BRAND -->
+        <div class="brand-col" style="position: relative; top: -20px;">
+           <a href="Home.html">
+        <img src="images/master new logo png.png" class="h-[130px] opacity-95" alt="Master Tradelines">
+      </a>
+
+          <p class="footer-desc">
+            Visit our showroom or contact us for bulk inquiries.
+            We are here to assist you.
+          </p>
+
+          <!-- SOCIAL ICONS -->
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <!-- Instagram (Fixed) -->
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="brands.html">Brand</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div>
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="showpieces.html">Showpieces & Decorative Items</a></li>
+            <li><a href="sleep-comfort.html">Sleep & Comfort Items</a></li>
+            <li><a href="floor-coverings.html">Floor Coverings Items </a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT with ICONS -->
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              info@mastertradeline.com
+            </li>
+            <li>
+              <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              +1 (555) 123-4567
+            </li>
+            <li>
+              <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>123 Design Street<br>New York, NY 10001</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+    Copyright &copy; 2025 
+    <a href="https://www.binocularads.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+        binocular adv
+    </a>. 
+    All rights reserved.
+</div>
+
+    </div>
+  </footer>
+      <script>
         // Filtering Logic
         function filterSelection(category) {
             const items = document.getElementsByClassName("gallery-item");
@@ -257,5 +572,9 @@
             document.getElementById("lightbox").classList.add("hidden");
         }
     </script>
+    
+
+<script type="module" src="style/js/mobile_menu.js"></script>
 </body>
 </html>
+
