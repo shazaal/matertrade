@@ -25,6 +25,8 @@
 
   <!-- BOOTSTRAP ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
 
   <!-- TAILWIND CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +39,7 @@
   </style>
 </head>
 
-<body class="bg-black text-white">
+<body class="">
 
   <!-- ================= HERO ================= -->
   <header class="relative min-h-screen bg-cover bg-center" style="background-image:url('images/hero_bg.png')">
@@ -117,12 +119,13 @@
 
 
     <!-- HERO CONTENT -->
-    <div class="relative z-10 px-6 lg:px-16 max-w-4xl pt-24 lg:pt-0 lg:absolute lg:bottom-28 relative z-10 px-6 lg:px-24 max-w-3xl">
-      <h1 class="text-4xl sm:text-5xl lg:text-[64px] font-medium leading-tight mb-6 ">
+    <div
+      class="relative z-10 px-6 lg:px-16 max-w-4xl pt-24 lg:pt-0 lg:absolute lg:bottom-28 relative z-10 px-6 lg:px-24 max-w-3xl">
+      <h1 class="text-4xl sm:text-5xl lg:text-[64px] font-medium leading-tight mb-6 text-white">
         Comfort That Builds<br>Better Spaces
       </h1>
 
-     <p class="text-base sm:text-lg text-white/90 mb-8 max-w-xl">
+      <p class="text-base sm:text-lg text-white/90 mb-8 max-w-xl">
 
         High-quality carpets, mattresses, and furnishing products for<br>
         homes, offices, and religious spaces.
@@ -167,10 +170,10 @@
         </span>
       </a>
 
-            <a href="floor-coverings.html" class="group text-3xl font-semibold">
+      <a href="Masjid_carpet.html" class="group text-3xl font-semibold">
         Masjid Carpets
         <span class="block text-lg text-white/60 group-hover:text-white transition">
-          
+
         </span>
       </a>
     </div>
@@ -226,209 +229,636 @@
     </div>
   </section>
   <!-- ================= PRODUCT SECTION ================= -->
- <section class="product-section">
-  <div class="product-header">
-    <h2 data-aos="fade-right">Our Product</h2>
+  <section class="product-section">
+    <div class="product-header">
+      <h2 data-aos="fade-right">Our Product</h2>
 
-    <div class="product-arrows" data-aos="fade-left">
-      <button class="arrow prev" id="prevBtn" aria-label="Previous">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-      </button>
-      <button class="arrow next" id="nextBtn" aria-label="Next">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <div class="product-grid" id="productContainer">
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="0">
-      <div class="img-wrap">
-        <span class="count">01</span>
-        <img src="images/product-1.png" alt="Floor Coverings">
-        <div class="overlay"></div> </div>
-      <div class="card-content">
-        <h3>Floor Coverings</h3>
-        <p>From initial concept development<br>and schematic design</p>
+      <div class="product-arrows" data-aos="fade-left">
+        <button class="arrow prev" id="prevBtn" aria-label="Previous">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5" />
+            <path d="M12 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button class="arrow next" id="nextBtn" aria-label="Next">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="M12 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-      <div class="img-wrap">
-        <span class="count">02</span>
-        <img src="images/product-2.png" alt="Comfort Products">
-      </div>
-      <div class="card-content">
-        <h3>Comfort Products</h3>
-        <p>From initial concept development<br>and schematic design</p>
-      </div>
-    </div>
+    <div class="product-grid" id="productContainer">
 
-    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-      <div class="img-wrap">
-        <span class="count">03</span>
-        <img src="images/product-3.png" alt="Showpieces">
-      </div>
-      <div class="card-content">
-        <h3>Showpieces</h3>
-        <p>From initial concept development<br>and schematic design</p>
-      </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
-      <div class="img-wrap">
-        <span class="count">04</span>
-        <img src="images/product-4.png" alt="Mattress">
-      </div>
-      <div class="card-content">
-        <h3>Vacuum Mattress</h3>
-        <p>From initial concept development<br>and schematic design</p>
-      </div>
-    </div>
-
-    <div class="product-card" data-aos="fade-up" data-aos-delay="400">
-      <div class="img-wrap">
-        <span class="count">05</span>
-        <img src="images/masjid_carpet.jpg" alt="Wall Decor">
-      </div>
-      <div class="card-content">
-        <h3>Masjid carpet</h3>
-        <p>From initial concept development<br>and schematic design</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
- <section class="why-section">
-  <div class="why-wrapper">
-
-    <div class="why-text" data-aos="fade-right">
-      <h2>What Makes<br>Us Different</h2>
-      <p>
-        Explore our selected works that demonstrate our commitment
-        to design excellence, innovation and client satisfaction.
-      </p>
-    </div>
-
-    <div class="why-card top-card" data-aos="fade-down" data-aos-delay="100">
-      <img src="images/WHY_US_2.png" alt="Premium Care">
-      <div class="card-overlay"></div> <div class="pill-wrap">
-        <span>Premium Care</span>
-        <span>High Precision</span>
-      </div>
-    </div>
-
-    <div class="why-card left-big" data-aos="fade-up" data-aos-delay="200">
-      <img src="images/WHY_US_1.png" alt="Our Mission">
-      <div class="card-overlay"></div>
-      <div class="content-overlay bottom">
-        <h3>Committed to<br>Our Mission</h3>
-        <p>Value and trust in every service we provide daily</p>
-      </div>
-    </div>
-
-    <div class="why-card bottom-card" data-aos="fade-up" data-aos-delay="300">
-      <img src="images/WHY_US_3.png" alt="Customer Ratings">
-      <div class="card-overlay"></div>
-      <div class="content-overlay top">
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="content-overlay bottom">
-        <h3>Trusted Excellence<br>Through Customer Ratings</h3>
-      </div>
-    </div>
-
-    <div class="right-col" data-aos="fade-left" data-aos-delay="400">
-      <div class="why-card tall-card">
-        <img src="images/WHY_US_4.png" alt="Reliable Solutions">
-        <div class="card-overlay"></div>
-        <div class="content-overlay center">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3>Reliable Solutions</h3>
-          <p>Delivering quality for long term performance</p>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="img-wrap">
+          <span class="count">01</span>
+          <img src="images/masjid_carpet.jpg" alt="Wall Decor">
+        </div>
+        <div class="card-content">
+          <h3>Masjid carpet</h3>
+          <p>From initial concept development<br>and schematic design</p>
         </div>
       </div>
-      
-      <a href="#" class="why-cta justify-center">
-        Contact Us 
-      </a>
-    </div>
 
-  </div>
-</section>
+      <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="img-wrap">
+          <span class="count">02</span>
+          <img src="images/product-1.png" alt="Floor Coverings">
+          <div class="overlay"></div>
+        </div>
+        <div class="card-content">
+          <h3>Floor Coverings</h3>
+          <p>From initial concept development<br>and schematic design</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="img-wrap">
+          <span class="count">03</span>
+          <img src="images/product-2.png" alt="Comfort Products">
+        </div>
+        <div class="card-content">
+          <h3>Comfort Products</h3>
+          <p>From initial concept development<br>and schematic design</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="img-wrap">
+          <span class="count">04</span>
+          <img src="images/product-3.png" alt="Showpieces">
+        </div>
+        <div class="card-content">
+          <h3>Showpieces</h3>
+          <p>From initial concept development<br>and schematic design</p>
+        </div>
+      </div>
+
+      <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="img-wrap">
+          <span class="count">05</span>
+          <img src="images/product-4.png" alt="Mattress">
+        </div>
+        <div class="card-content">
+          <h3>Vacuum Mattress</h3>
+          <p>From initial concept development<br>and schematic design</p>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="why-wrapper">
+
+      <div class="why-text" data-aos="fade-right">
+        <h2>What Makes<br>Us Different</h2>
+        <p>
+          Explore our selected works that demonstrate our commitment
+          to design excellence, innovation and client satisfaction.
+        </p>
+      </div>
+
+      <div class="why-card top-card" data-aos="fade-down" data-aos-delay="100">
+        <img src="images/WHY_US_2.png" alt="Premium Care">
+        <div class="card-overlay"></div>
+        <div class="pill-wrap">
+          <span>Premium Care</span>
+          <span>High Precision</span>
+        </div>
+      </div>
+
+      <div class="why-card left-big" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/WHY_US_1.png" alt="Our Mission">
+        <div class="card-overlay"></div>
+        <div class="content-overlay bottom">
+          <h3>Committed to<br>Our Mission</h3>
+          <p>Value and trust in every service we provide daily</p>
+        </div>
+      </div>
+
+      <div class="why-card bottom-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/WHY_US_3.png" alt="Customer Ratings">
+        <div class="card-overlay"></div>
+        <div class="content-overlay top">
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="content-overlay bottom">
+          <h3>Trusted Excellence<br>Through Customer Ratings</h3>
+        </div>
+      </div>
+
+      <div class="right-col" data-aos="fade-left" data-aos-delay="400">
+        <div class="why-card tall-card">
+          <img src="images/WHY_US_4.png" alt="Reliable Solutions">
+          <div class="card-overlay"></div>
+          <div class="content-overlay center">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h3>Reliable Solutions</h3>
+            <p>Delivering quality for long term performance</p>
+          </div>
+        </div>
+
+        <a href="#" class="why-cta justify-center">
+          Contact Us
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ================= SERVICES SECTION ================= -->
- <section class="services-section">
-  <div class="services-wrapper">
 
-    <div class="services-left" data-aos="fade-right">
-      <span class="sub-title">Trusted expertise in every step</span>
-      
-      <h2>
-        We deliver <br>
-        <span class="highlight">Where you are</span>
-      </h2>
 
-      <div class="service-img-wrap">
-        <img src="images/we_de;liver.png" alt="Delivery Service">
+
+  <section class="services-section">
+    <div class="services-wrapper">
+
+      <div class="services-left" data-aos="fade-right">
+        <span class="sub-title">Trusted expertise in every step</span>
+
+        <h2>
+          We deliver <br>
+          <span class="highlight">Where you are</span>
+        </h2>
+
+        <div class="service-img-wrap">
+          <img src="images/we_de;liver.png" alt="Delivery Service">
+        </div>
       </div>
-    </div>
 
-    <div class="services-right">
-      
-      <p class="intro-text" data-aos="fade-left">
-        We ensure strict adherence to industry regulations, prioritizing
-        health, safety, and environmental standards in every project we undertake.
-      </p>
+      <div class="services-right">
 
-      <div class="services-grid">
+        <p class="intro-text" data-aos="fade-left">
+          We ensure strict adherence to industry regulations, prioritizing
+          health, safety, and environmental standards in every project we undertake.
+        </p>
 
-        <div class="service-item" data-aos="fade-up" data-aos-delay="0">
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-              <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-            </svg>
+        <div class="services-grid">
+
+          <div class="service-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-truck"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+              </svg>
+            </div>
+            <h4>Global Logistics</h4>
+            <p>Seamless transportation and delivery networks ensuring your products arrive on time.</p>
           </div>
-          <h4>Global Logistics</h4>
-          <p>Seamless transportation and delivery networks ensuring your products arrive on time.</p>
-        </div>
 
-        <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16">
-              <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.23-1.158-.412-1.61-.575a61.443 61.443 0 0 0-2.67-.818c-.53-.154-1.11-.28-1.751-.376a49.12 49.12 0 0 0-1.455-.133c-.073-.005-.145-.007-.216-.007-.07 0-.142.002-.216.007-1.29.08-3.958.495-5.338 1.59zm1.763 2.227a.5.5 0 0 1 .71-.082L8.75 6.403l2.707-3.246a.5.5 0 0 1 .792.597l-3.153 3.78a.5.5 0 0 1-.773.018l-1.98-2.375a.5.5 0 0 1 .083-.71z"/>
-            </svg>
+          <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-shield-check" viewBox="0 0 16 16">
+                <path
+                  d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.23-1.158-.412-1.61-.575a61.443 61.443 0 0 0-2.67-.818c-.53-.154-1.11-.28-1.751-.376a49.12 49.12 0 0 0-1.455-.133c-.073-.005-.145-.007-.216-.007-.07 0-.142.002-.216.007-1.29.08-3.958.495-5.338 1.59zm1.763 2.227a.5.5 0 0 1 .71-.082L8.75 6.403l2.707-3.246a.5.5 0 0 1 .792.597l-3.153 3.78a.5.5 0 0 1-.773.018l-1.98-2.375a.5.5 0 0 1 .083-.71z" />
+              </svg>
+            </div>
+            <h4>Safety & Compliance</h4>
+            <p>We adhere to strict safety protocols and industry standards for peace of mind.</p>
           </div>
-          <h4>Safety & Compliance</h4>
-          <p>We adhere to strict safety protocols and industry standards for peace of mind.</p>
-        </div>
 
-        <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
-              <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708ZM3 11l.9.6a.5.5 0 1 1-.6.6l-.6-.9A1.5 1.5 0 0 1 3 11Z"/>
-            </svg>
+          <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-tools"
+                viewBox="0 0 16 16">
+                <path
+                  d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708ZM3 11l.9.6a.5.5 0 1 1-.6.6l-.6-.9A1.5 1.5 0 0 1 3 11Z" />
+              </svg>
+            </div>
+            <h4>Expert Installation</h4>
+            <p>Our skilled technical team ensures your products are set up perfectly on-site.</p>
           </div>
-          <h4>Expert Installation</h4>
-          <p>Our skilled technical team ensures your products are set up perfectly on-site.</p>
-        </div>
 
-        <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
-              <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-            </svg>
+          <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-seam"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+              </svg>
+            </div>
+            <h4>Secure Packaging</h4>
+            <p>Using premium materials to protect your assets during storage and transit.</p>
           </div>
-          <h4>Secure Packaging</h4>
-          <p>Using premium materials to protect your assets during storage and transit.</p>
-        </div>
 
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div>
+  </section>
+  <!-- Master Trade Hero Section -->
+
+  <!-- importer  -->
+     <style>
+    :root {
+      --orange: #f97316;
+      --slate: #0f172a;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fcfcfc;
+      color: var(--slate);
+      margin: 0;
+      overflow-x: hidden;
+      cursor: auto;
+
+    }
+
+    #importer-section {
+      cursor: none;
+    }
+
+    /* Custom Cursor */
+    #cursor {
+      width: 12px;
+      height: 12px;
+      background-color: #f97316;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease-out;
+      opacity: 0;
+    }
+
+    #cursor-follower {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0;
+      /* hidden by default */
+    }
+
+    /* Reveal Animations */
+    .reveal-wrapper {
+      overflow: hidden;
+    }
+
+    .reveal-content {
+      transform: translateY(110%);
+      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .active .reveal-content {
+      transform: translateY(0);
+    }
+
+    /* Parallax Visual */
+    .visual-frame {
+      transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .outline-text {
+      -webkit-text-stroke: 1px rgba(15, 23, 42, 0.08);
+      color: transparent;
+    }
+
+    /* Magnetic Hover */
+    .magnetic-wrap {
+      display: inline-block;
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* Image Mask Reveal */
+    .img-mask {
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .active .img-mask {
+      clip-path: inset(0 0 0 0);
+    }
+    
+
+    @media (max-width: 768px) {
+      body {
+        cursor: auto;
+      }
+
+      #cursor,
+      #cursor-follower {
+        display: none;
+      }
+    }
+    /* ROUTES */
+.route-path {
+  stroke: #5b5f8a;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawRoute 2s ease forwards;
+}
+
+.route-path:nth-child(2) { animation-delay: .4s; }
+.route-path:nth-child(3) { animation-delay: .8s; }
+
+@keyframes drawRoute {
+  to { stroke-dashoffset: 0; }
+}
+
+.route-dot {
+  fill: #5b5f8a;
+  opacity: 0;
+  animation: dotIn .4s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes dotIn {
+  to { opacity: 1; }
+}
+
+/* ICONS */
+.route-icon {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  background: #1e3a8a;
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.route-icon.ship { animation-delay: .4s; }
+.route-icon.truck { animation-delay: .8s; }
+
+@keyframes floatIcon {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+  </style>
+  <section id="importer-section" class="antialiased">
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <main>
+      <section id="hero-section"
+        class="relative min-h-screen flex items-center px-6 md:px-20 lg:px-32 py-20 overflow-hidden">
+
+        <!-- Background Watermark -->
+        <div class="absolute top-1/2 left-0 -translate-y-1/2 -z-10 select-none">
+          <h2 class="text-[30vw] font-black leading-none outline-text tracking-tighter">Master trade</h2>
+        </div>
+
+        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+          <!-- Left Content Area -->
+          <div class="lg:col-span-8 z-10">
+            <div class="reveal-wrapper mb-6">
+              <div class="reveal-content flex items-center gap-3">
+                <span class="w-8 h-0.5 bg-orange-500"></span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">Master Trade</span>
+              </div>
+            </div>
+
+            <div class="space-y-[-10px] md:space-y-[-30px]">
+              <div class="reveal-wrapper">
+                <h1 class="reveal-content text-[15vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter">
+                  Largest
+                </h1>
+              </div>
+              <div class="reveal-wrapper flex flex-wrap items-baseline gap-x-8">
+                <h1
+                  class="reveal-content text-[15vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter text-orange-500"
+                  style="transition-delay: 0.1s;">
+                  importer.
+                </h1>
+                <div class="reveal-wrapper hidden md:block">
+                  <p class="reveal-content text-lg text-slate-400 font-medium max-w-[280px] leading-snug"
+                    style="transition-delay: 0.2s;">
+                    Dominating the logistics landscape with unparalleled import scale and precision.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-16 reveal-wrapper" style="transition-delay: 0.4s;">
+              <div class="reveal-content flex flex-wrap items-center gap-12">
+                <div class="magnetic-wrap">
+                  <button class="group relative flex items-center gap-6 pr-8">
+                    <div
+                      class="w-20 h-20 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:text-white transition-colors"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
+                    <span
+                      class="text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-orange-500 transition-colors">Begin
+                      Partnership</span>
+                  </button>
+                </div>
+
+                <div class="flex gap-10 items-center">
+                  <div>
+                    <span class="block text-2xl font-black italic">500+</span>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">Monthly </span>
+                  </div>
+                  <div class="w-px h-8 bg-slate-200"></div>
+                  <div>
+                    <span class="block text-2xl font-black italic">14</span>
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">Global Hubs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Visual Area -->
+<!-- Right Visual Area -->
+
+
+
+
+<style>
+  :root {
+    --orange: #f97316;
+    --slate: #0f172a;
+    --path-color: rgba(15, 23, 42, 0.1);
+  }
+
+  .node-label {
+    font-size: 10px;
+    font-weight: 700;
+    fill: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .node-bg {
+    fill: white;
+    stroke: #e2e8f0;
+    stroke-width: 1;
+  }
+
+  .route-path {
+    fill: none;
+    stroke: var(--path-color);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+
+  .pulse-line {
+    fill: none;
+    stroke: var(--orange);
+    stroke-width: 2;
+    stroke-dasharray: 4, 12;
+    opacity: 0.6;
+  }
+
+  .floating {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Ensure SVG scales within the 4-column width */
+  svg {
+    max-height: 100%;
+    width: 100%;
+    display: block;
+  }
+</style>
+
+<div class="lg:col-span-4 relative flex justify-center items-center min-h-[400px] md:h-[600px] w-full">
+  
+  <svg viewBox="0 0 800 600" class="w-full h-full drop-shadow-2xl overflow-visible" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Glows -->
+    <circle cx="400" cy="300" r="150" fill="url(#mainGlow)" opacity="0.4" />
+    
+    <defs>
+      <radialGradient id="mainGlow">
+        <stop offset="0%" stop-color="#f97316" stop-opacity="0.2" />
+        <stop offset="100%" stop-color="#f97316" stop-opacity="0" />
+      </radialGradient>
+      
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="5" result="blur" />
+        <feOffset dx="0" dy="4" result="offsetBlur" />
+        <feMerge>
+          <feMergeNode in="offsetBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Routes (Complex Curves) -->
+    <path id="route1" class="route-path" d="M150,150 C250,50 400,100 500,300 S650,550 700,450" />
+    <path id="route2" class="route-path" d="M100,400 C200,350 300,500 500,300 S600,100 700,150" />
+    <path id="route3" class="route-path" d="M400,50 C450,200 350,400 500,300 S750,250 750,350" />
+
+    <!-- Animated Pulse Lines -->
+    <use href="#route1" class="pulse-line">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+    </use>
+    <use href="#route2" class="pulse-line">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="6s" repeatCount="indefinite" />
+    </use>
+
+    <!-- Nodes with Labels -->
+    <g class="node">
+      <rect x="105" y="125" width="80" height="24" rx="12" class="node-bg" filter="url(#shadow)" />
+      <text x="145" y="141" text-anchor="middle" class="node-label">Indonesia</text>
+      <circle cx="145" cy="150" r="4" fill="#1e3a8a" />
+    </g>
+
+    <g class="node">
+      <rect x="650" y="125" width="60" height="24" rx="12" class="node-bg" filter="url(#shadow)" />
+      <text x="680" y="141" text-anchor="middle" class="node-label">China</text>
+      <circle cx="680" cy="150" r="4" fill="#1e3a8a" />
+    </g>
+
+    <g class="node">
+      <rect x="670" y="325" width="60" height="24" rx="12" class="node-bg" filter="url(#shadow)" />
+      <text x="700" y="341" text-anchor="middle" class="node-label">UAE</text>
+      <circle cx="700" cy="350" r="4" fill="#1e3a8a" />
+    </g>
+
+    <g class="node">
+      <rect x="75" y="375" width="60" height="24" rx="12" class="node-bg" filter="url(#shadow)" />
+      <text x="105" y="391" text-anchor="middle" class="node-label">India</text>
+      <circle cx="105" cy="400" r="4" fill="#1e3a8a" />
+    </g>
+
+    <g class="node">
+      <rect x="670" y="425" width="80" height="24" rx="12" class="node-bg" filter="url(#shadow)" />
+      <text x="710" y="441" text-anchor="middle" class="node-label">Singapore</text>
+      <circle cx="710" cy="450" r="4" fill="#1e3a8a" />
+    </g>
+
+    <!-- Animated Vehicles -->
+    
+    <!-- Plane Icon -->
+    <g filter="url(#shadow)">
+      <circle r="22" fill="#1e3a8a" />
+      <path d="M-6,0 L6,-5 L4,0 L6,5 Z" fill="white" />
+      <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#route1" />
+      </animateMotion>
+    </g>
+
+    <!-- Ship Icon -->
+    <g filter="url(#shadow)">
+      <circle r="22" fill="#f97316" />
+      <path d="M-8,2 L8,2 L6,6 L-6,6 Z M-8,2 L-8,-2 L8,-2 L8,2" fill="white" />
+      <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" begin="2s">
+        <mpath href="#route2" />
+      </animateMotion>
+    </g>
+
+    <!-- Truck Icon -->
+    <g filter="url(#shadow)">
+      <circle r="22" fill="#334155" />
+      <path d="M-8,4 L8,4 L8,-2 L2,-2 L2,-6 L-8,-6 Z" fill="white" />
+      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto" begin="4s">
+        <mpath href="#route3" />
+      </animateMotion>
+    </g>
+
+  </svg>
+
+  <!-- Hub Overlay Center
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center floating shadow-xl">
+     <div class="text-center">
+       <span class="block text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Global Hub</span>
+       <span class="text-lg font-black text-slate-900">MT</span>
+     </div>
+  </div> -->
+
+</div>
+
+
+
+        </div>
+      </section>
+    </main>
+  </section>
   <!-- ================= CTA SECTION ================= -->
   <section class="cta-section">
     <div class="container">
@@ -477,9 +907,9 @@
 
         <!-- BRAND -->
         <div class="brand-col" style="position: relative; top: -20px;">
-           <a href="Home.html">
-        <img src="images/master new logo png.png" class="h-[130px] opacity-95" alt="Master Tradelines">
-      </a>
+          <a href="Home.html">
+            <img src="images/master new logo png.png" class="h-[130px] opacity-95" alt="Master Tradelines">
+          </a>
 
           <p class="footer-desc">
             Visit our showroom or contact us for bulk inquiries.
@@ -575,27 +1005,74 @@
 
       </div>
 
-<div class="footer-divider"></div>
+      <div class="footer-divider"></div>
 
-<div class="footer-bottom">
-    Copyright &copy; 2025 
-    <a href="https://www.binocularads.com/" target="_blank" rel="noopener noreferrer" class="company-link">
-        binocular adv
-    </a>. 
-    All rights reserved.
-</div>
+      <div class="footer-bottom">
+        Copyright &copy; 2025
+        <a href="https://www.binocularads.com/" target="_blank" rel="noopener noreferrer" class="company-link">
+          binocular adv
+        </a>.
+        All rights reserved.
+      </div>
 
     </div>
   </footer>
+  <script>
+    // Trigger animations
+    window.onload = () => {
+      document.getElementById('hero-section').classList.add('active');
+    }
+
+    // Custom Cursor Logic
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursor-follower');
+
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      cursor.style.transform = `translate3d(${x - 6}px, ${y - 6}px, 0)`;
+      follower.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0)`;
+    });
+
+    // Hover Effect for Cursor
+    const buttons = document.querySelectorAll('button, a');
+    buttons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        follower.style.background = 'rgba(249, 115, 22, 0.1)';
+        follower.style.transform = `translate3d(${follower.offsetLeft}px, ${follower.offsetTop}px, 0) scale(1.5)`;
+        follower.style.borderColor = 'var(--orange)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        follower.style.background = 'transparent';
+        follower.style.transform = `scale(1)`;
+        follower.style.borderColor = 'rgba(0,0,0,0.1)';
+      });
+    });
+
+    // Parallax Visual Movement
+    const hero = document.getElementById('hero-section');
+    const frame = document.querySelector('.visual-frame');
+
+    hero.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const xPos = (clientX / window.innerWidth - 0.5) * 40;
+      const yPos = (clientY / window.innerHeight - 0.5) * 40;
+
+      frame.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) rotateY(${xPos / 2}deg) rotateX(${-yPos / 2}deg)`;
+    });
+  </script>
+
   <script type="module" src="style/js/mobile_menu.js"></script>
   <script type="module" src="style/js/product_arrow.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800, // Duration of animation
-    once: true,    // Only animate once
-  });
-</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- <script src="style/js/importers.js"></script> -->
+  <script>
+    AOS.init({
+      duration: 800, // Duration of animation
+      once: true,    // Only animate once
+    });
+  </script>
 
 </body>
 

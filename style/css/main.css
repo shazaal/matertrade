@@ -12,7 +12,7 @@
 ========================= */
 body {
   font-family: 'Sora', sans-serif;
-  background: #000;
+ 
  
   -webkit-font-smoothing: antialiased;
 }
@@ -578,9 +578,11 @@ body {
 }
 
 .why-cta:hover {
-  background: #333;
+  background: #000;
+  color: #fff;
   transform: translateY(-2px);
 }
+
 
 /* =========================
    RESPONSIVE BREAKPOINTS
@@ -837,7 +839,11 @@ body {
   border-radius: 999px;
   text-decoration: none;
 }
+.why-cta a :hover{
+  color: #ffffff;
+}
 
+   
         /* ================= CTA SECTION ================= */
         .cta-section {
             padding: 128px 0;

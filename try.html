@@ -1,274 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Form</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-<style>
-  body {
-    font-family: 'Sora', sans-serif;
-    background: #fff;
-    color: #000;
-    margin: 0;
-  }
-
-  /* ================= CONTACT SECTION ================= */
-  .contact-section {
-    max-width: 1200px;
-    margin: 160px auto 120px;
-    padding: 0 24px;
-  }
-
-  .contact-title {
-    font-size: 64px;
-    font-weight: 500;
-    line-height: 1.1;
-    margin-bottom: 30px;
-  }
-
-  .contact-sub {
-    color: #777;
-    font-size: 16px;
-    margin-bottom: 50px;
-    text-transform: lowercase;
-  }
-
-  .contact-list {
-    border-top: 1px solid #ccc;
-  }
-
-  .contact-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 28px 0;
-    border-bottom: 1px solid #ccc;
-    text-decoration: none;
-    color: #000;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all .25s ease;
-    background: transparent;
-    width: 100%;
-    text-align: left;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-  }
-
-  .contact-item:hover {
-    opacity: .7;
-    padding-left: 10px; /* Slight movement for interaction */
-  }
-
-  .contact-item i {
-    font-size: 20px;
-  }
-
-  /* ================= HIDDEN WHATSAPP FORM ================= */
-  
-  /* Initial state: Hidden with 0 height for animation */
-  #whatsapp-form-container {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease;
-    border-bottom: 1px solid #ccc; /* Border appears when open */
-    border-bottom-width: 0;
-  }
-
-  /* Active state: Visible */
-  #whatsapp-form-container.active {
-    max-height: 500px; /* Enough height to fit the form */
-    border-bottom-width: 1px;
-    padding: 40px 0;
-  }
-
-  .wa-form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-
-  .input-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Minimalist Input Style matching image */
-  .clean-input {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #000;
-    padding: 10px 0;
-    font-family: 'Sora', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    outline: none;
-    background: transparent;
-    color: #333;
-  }
-
-  .clean-input::placeholder {
-    color: #999;
-    font-weight: 300;
-  }
-
-  .clean-input:focus {
-    border-bottom: 1px solid #777;
-  }
-
-  /* Centered Button Container */
-  .form-actions {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  /* Pill Shaped Button */
-  .send-btn {
-    background: #fff;
-    color: #000;
-    border: 1px solid #000;
-    padding: 12px 60px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Sora', sans-serif;
-  }
-
-  .send-btn:hover {
-    background: #000;
-    color: #fff;
-  }
-
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .contact-title {
-      font-size: 42px;
-    }
-    .wa-form-grid {
-      grid-template-columns: 1fr; /* Stack inputs on mobile */
-      gap: 20px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<section class="contact-section">
-    <h1 class="contact-title">
-      Contact<br>our team
-    </h1>
-    <div class="contact-sub">contact us</div>
-
-    <div class="contact-list">
-
-      <a href="mailto:info@mastertradeline.com" class="contact-item">
-        <span>Email</span>
-        <i class="bi bi-arrow-up-right"></i>
-      </a>
-
-      <a href="tel:18001254254" class="contact-item">
-        <span>Call Now</span>
-        <i class="bi bi-arrow-up-right"></i>
-      </a>
-
-      <div class="contact-item" onclick="toggleWhatsappForm()" style="cursor: pointer;">
-        <span>WhatsApp</span>
-        <i class="bi bi-arrow-down-right" id="wa-icon"></i>
-      </div>
-
-      <div id="whatsapp-form-container">
-        <form id="waForm" onsubmit="sendToWhatsapp(event)">
-            
-            <div class="wa-form-grid">
-                <div class="input-group">
-                    <input type="text" id="wa-name" class="clean-input" placeholder="Name" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" id="wa-place" class="clean-input" placeholder="Place" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" id="wa-product" class="clean-input" placeholder="Product" required>
-                </div>
-                <div class="input-group">
-                    <input type="tel" id="wa-number" class="clean-input" placeholder="Number" required>
-                </div>
-            </div>
-
-            <div class="form-actions">
-                <button type="submit" class="send-btn">Send</button>
-            </div>
-
-        </form>
-      </div>
-
-      <a href="https://maps.google.com" target="_blank" class="contact-item">
-        <span>Location</span>
-        <i class="bi bi-arrow-up-right"></i>
-      </a>
-
-    </div>
-</section>
-
-<script>
-    // 1. Toggle the Form Visibility
-    function toggleWhatsappForm() {
-        const formContainer = document.getElementById('whatsapp-form-container');
-        const icon = document.getElementById('wa-icon');
-        
-        // Toggle the active class
-        formContainer.classList.toggle('active');
-        
-        // Optional: Rotate icon or change it when open
-        if(formContainer.classList.contains('active')){
-            icon.classList.remove('bi-arrow-down-right');
-            icon.classList.remove('bi-arrow-up-right'); // ensure clean state
-            icon.classList.add('bi-x-lg'); // Change to X when open
-        } else {
-            icon.classList.remove('bi-x-lg');
-            icon.classList.add('bi-arrow-down-right');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Trade | Premium Logistics Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #f97316;
+            --slate: #0f172a;
         }
-    }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfcfc;
+            color: var(--slate);
+            margin: 0;
+            overflow-x: hidden;
+            cursor: none; /* Custom cursor */
+        }
 
-    // 2. Handle Sending to WhatsApp
-    function sendToWhatsapp(e) {
-        e.preventDefault(); // Stop page reload
+        /* Custom Cursor */
+        #cursor {
+            width: 12px;
+            height: 12px;
+            background-color: var(--orange);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+        }
+        #cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s ease-out, background 0.3s;
+        }
 
-        // Get values from inputs
-        const name = document.getElementById('wa-name').value;
-        const place = document.getElementById('wa-place').value;
-        const product = document.getElementById('wa-product').value;
-        const number = document.getElementById('wa-number').value;
+        /* Reveal Animations */
+        .reveal-wrapper {
+            overflow: hidden;
+        }
+        .reveal-content {
+            transform: translateY(110%);
+            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .active .reveal-content {
+            transform: translateY(0);
+        }
 
-        // The WhatsApp Number to send TO (Your business number)
-        // Format: No spaces, no +, include country code. 
-        // Example: 918001254254
-        const businessNumber = "918001254254"; 
+        /* Parallax Visual */
+        .visual-frame {
+            transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
 
-        // Create the message text
-        // %0a creates a new line
-        const message = `*New Inquiry via Website* %0a` +
-                        `-----------------------%0a` +
-                        `*Name:* ${name}%0a` +
-                        `*Place:* ${place}%0a` +
-                        `*Product:* ${product}%0a` +
-                        `*Contact Number:* ${number}`;
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(15, 23, 42, 0.08);
+            color: transparent;
+        }
 
-        // Construct the URL
-        const whatsappUrl = `https://wa.me/${businessNumber}?text=${message}`;
+        /* Magnetic Hover */
+        .magnetic-wrap {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-        // Open WhatsApp in new tab
-        window.open(whatsappUrl, '_blank');
-    }
-</script>
+        /* Image Mask Reveal */
+        .img-mask {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .active .img-mask {
+            clip-path: inset(0 0 0 0);
+        }
 
+        @media (max-width: 768px) {
+            body { cursor: auto; }
+            #cursor, #cursor-follower { display: none; }
+        }
+    </style>
+</head>
+<body >
+<section class="antialiased">
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <main>
+        <section id="hero-section" class="relative min-h-screen flex items-center px-6 md:px-20 lg:px-32 py-20 overflow-hidden">
+            
+            <!-- Background Watermark -->
+            <div class="absolute top-1/2 left-0 -translate-y-1/2 -z-10 select-none">
+                <h2 class="text-[30vw] font-black leading-none outline-text tracking-tighter">Master trade</h2>
+            </div>
+
+            <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Content Area -->
+                <div class="lg:col-span-8 z-10">
+                    <div class="reveal-wrapper mb-6">
+                        <div class="reveal-content flex items-center gap-3">
+                            <span class="w-8 h-0.5 bg-orange-500"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">Master Trade</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-[-10px] md:space-y-[-30px]">
+                        <div class="reveal-wrapper">
+                            <h1 class="reveal-content text-[15vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter">
+                                Largest 
+                            </h1>
+                        </div>
+                        <div class="reveal-wrapper flex flex-wrap items-baseline gap-x-8">
+                            <h1 class="reveal-content text-[15vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter text-orange-500" style="transition-delay: 0.1s;">
+                               importer.
+                            </h1>
+                            <div class="reveal-wrapper hidden md:block">
+                                <p class="reveal-content text-lg text-slate-400 font-medium max-w-[280px] leading-snug" style="transition-delay: 0.2s;">
+                                    Dominating the logistics landscape with unparalleled import scale and precision.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 reveal-wrapper" style="transition-delay: 0.4s;">
+                        <div class="reveal-content flex flex-wrap items-center gap-12">
+                            <div class="magnetic-wrap">
+                                <button class="group relative flex items-center gap-6 pr-8">
+                                    <div class="w-20 h-20 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-orange-500 transition-colors">Begin Partnership</span>
+                                </button>
+                            </div>
+
+                            <div class="flex gap-10 items-center">
+                                <div>
+                                    <span class="block text-2xl font-black italic">500+</span>
+                                    <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">Monthly </span>
+                                </div>
+                                <div class="w-px h-8 bg-slate-200"></div>
+                                <div>
+                                    <span class="block text-2xl font-black italic">14</span>
+                                    <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">Global Hubs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Area -->
+                <div class="lg:col-span-4 relative mt-12 lg:mt-0">
+                    <div class="visual-frame relative group">
+                        <!-- Updated Card with Image -->
+                        <div class="img-mask aspect-[3/4] bg-slate-100 overflow-hidden rounded-sm relative">
+                            <!-- Background Image -->
+                            <img src="images/container.png" alt="Master Trade Container" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800'">
+                            
+                            <!-- Overlay Text -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col p-10 justify-end">
+                                <div class="flex justify-between items-start opacity-60 mb-auto">
+                                    <div class="w-12 h-px bg-white"></div>
+                                    <span class="text-[8px] text-white uppercase font-bold tracking-widest">Serial: MT-KRL-24</span>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <h3 class="text-3xl font-bold text-white tracking-tighter uppercase leading-none">Global <br>Import<br>Nexus</h3>
+                                    <p class="text-white/60 text-[10px] leading-relaxed max-w-[160px] uppercase font-bold tracking-tighter">Strategic distribution across the Kerala coastline.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Micro-Interaction -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-2xl border border-slate-50 flex items-center gap-4 reveal-wrapper" style="transition-delay: 0.6s;">
+                            <div class="reveal-content flex items-center gap-4">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-900">Track: In-Transit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+</section>
+    <script>
+        // Trigger animations
+        window.onload = () => {
+            document.getElementById('hero-section').classList.add('active');
+        }
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            cursor.style.transform = `translate3d(${x - 6}px, ${y - 6}px, 0)`;
+            follower.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0)`;
+        });
+
+        // Hover Effect for Cursor
+        const buttons = document.querySelectorAll('button, a');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                follower.style.background = 'rgba(249, 115, 22, 0.1)';
+                follower.style.transform = `translate3d(${follower.offsetLeft}px, ${follower.offsetTop}px, 0) scale(1.5)`;
+                follower.style.borderColor = 'var(--orange)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                follower.style.background = 'transparent';
+                follower.style.transform = `scale(1)`;
+                follower.style.borderColor = 'rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Parallax Visual Movement
+        const hero = document.getElementById('hero-section');
+        const frame = document.querySelector('.visual-frame');
+        
+        hero.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const xPos = (clientX / window.innerWidth - 0.5) * 40;
+            const yPos = (clientY / window.innerHeight - 0.5) * 40;
+            
+            frame.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) rotateY(${xPos/2}deg) rotateX(${-yPos/2}deg)`;
+        });
+    </script>
 </body>
 </html>
