@@ -1,242 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Trade | Premium Logistics Hero</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --orange: #f97316;
-            --slate: #0f172a;
-        }
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fcfcfc;
-            color: var(--slate);
-            margin: 0;
-            overflow-x: hidden;
-            cursor: none; /* Custom cursor */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Trade | Product Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #28257C;
+      --slate: #0f172a;
+    }
 
-        /* Custom Cursor */
-        #cursor {
-            width: 12px;
-            height: 12px;
-            background-color: var(--orange);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease-out;
-        }
-        #cursor-follower {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.15s ease-out, background 0.3s;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fcfcfc;
+      color: var(--slate);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
 
-        /* Reveal Animations */
-        .reveal-wrapper {
-            overflow: hidden;
-        }
-        .reveal-content {
-            transform: translateY(110%);
-            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .active .reveal-content {
-            transform: translateY(0);
-        }
+    /* Reveal Animations */
+    .reveal-wrapper { 
+      overflow: hidden; 
+      position: relative;
+    }
+    
+    .reveal-content {
+      transform: translateY(110%);
+      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .active .reveal-content { 
+      transform: translateY(0); 
+    }
 
-        /* Parallax Visual */
-        .visual-frame {
-            transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
+    /* Image Mask Reveal - Reinforced Container Clipping */
+    .img-reveal-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+    }
 
-        .outline-text {
-            -webkit-text-stroke: 1px rgba(15, 23, 42, 0.08);
-            color: transparent;
-        }
+    .img-mask {
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 100%;
+      height: 100%;
+    }
+    
+    .active .img-mask {
+      clip-path: inset(0 0 0 0);
+    }
 
-        /* Magnetic Hover */
-        .magnetic-wrap {
-            display: inline-block;
-            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        }
+    /* PREMIUM VISUAL GALLERY STYLES */
+    .visual-tile {
+      position: relative;
+      overflow: hidden; /* Strict border containment */
+      border-radius: 1rem;
+      background: #f8fafc;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    
+    .visual-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1), filter 0.8s ease;
+      display: block;
+    }
 
-        /* Image Mask Reveal */
-        .img-mask {
-            clip-path: inset(0 100% 0 0);
-            transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.175, 1);
-        }
-        .active .img-mask {
-            clip-path: inset(0 0 0 0);
-        }
+    .visual-tile:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.05); /* Subtle zoom stays within borders */
+    }
 
-        @media (max-width: 768px) {
-            body { cursor: auto; }
-            #cursor, #cursor-follower { display: none; }
-        }
-    </style>
+    .visual-tile:hover {
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
+      transform: translateY(-4px);
+    }
+
+    .tile-overlay {
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .visual-tile:hover .tile-overlay {
+      opacity: 1;
+    }
+  </style>
 </head>
-<body >
-<section class="antialiased">
-    <!-- Custom Cursor -->
-    <div id="cursor"></div>
-    <div id="cursor-follower"></div>
+<body class="antialiased">
 
-    <main>
-        <section id="hero-section" class="relative min-h-screen flex items-center px-6 md:px-20 lg:px-32 py-20 overflow-hidden">
-            
-            <!-- Background Watermark -->
-            <div class="absolute top-1/2 left-0 -translate-y-1/2 -z-10 select-none">
-                <h2 class="text-[30vw] font-black leading-none outline-text tracking-tighter">Master trade</h2>
+
+
+    <!-- COMPACT SECTION DESIGN -->
+    <section id="gallery-preview" class=" antialiased py-20 px-6 md:px-20 lg:px-32 bg-white overflow-hidden">
+      <div class="max-w-[1100px] mx-auto">
+        
+        <!-- Compact Showcase Header -->
+        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+          <div class="reveal-wrapper active">
+            <div class="reveal-content">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-blue-500 font-bold text-[9px] tracking-[0.4em] uppercase">The Collection</span>
+                <div class="h-px w-8 bg-slate-200"></div>
+              </div>
+             
             </div>
-
-            <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
-                <!-- Left Content Area -->
-                <div class="lg:col-span-8 z-10">
-                    <div class="reveal-wrapper mb-6">
-                        <div class="reveal-content flex items-center gap-3">
-                            <span class="w-8 h-0.5 bg-orange-500"></span>
-                            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400">Master Trade</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-[-10px] md:space-y-[-30px]">
-                        <div class="reveal-wrapper">
-                            <h1 class="reveal-content text-[15vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter">
-                                Largest 
-                            </h1>
-                        </div>
-                        <div class="reveal-wrapper flex flex-wrap items-baseline gap-x-8">
-                            <h1 class="reveal-content text-[15vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter text-orange-500" style="transition-delay: 0.1s;">
-                               importer.
-                            </h1>
-                            <div class="reveal-wrapper hidden md:block">
-                                <p class="reveal-content text-lg text-slate-400 font-medium max-w-[280px] leading-snug" style="transition-delay: 0.2s;">
-                                    Dominating the logistics landscape with unparalleled import scale and precision.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-16 reveal-wrapper" style="transition-delay: 0.4s;">
-                        <div class="reveal-content flex flex-wrap items-center gap-12">
-                            <div class="magnetic-wrap">
-                                <button class="group relative flex items-center gap-6 pr-8">
-                                    <div class="w-20 h-20 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-500">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </div>
-                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-orange-500 transition-colors">Begin Partnership</span>
-                                </button>
-                            </div>
-
-                            <div class="flex gap-10 items-center">
-                                <div>
-                                    <span class="block text-2xl font-black italic">500+</span>
-                                    <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">Monthly </span>
-                                </div>
-                                <div class="w-px h-8 bg-slate-200"></div>
-                                <div>
-                                    <span class="block text-2xl font-black italic">14</span>
-                                    <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">Global Hubs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+          <div class="reveal-wrapper active">
+            <div class="reveal-content pb-1">
+              <a href="gallery.html" class="group flex items-center gap-3 text-[9px] font-bold uppercase tracking-widest">
+                Browse Collection
+                <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center group-hover:bg-blue-500 transition-all duration-500 transform group-hover:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </div>
-
-                <!-- Right Visual Area -->
-                <div class="lg:col-span-4 relative mt-12 lg:mt-0">
-                    <div class="visual-frame relative group">
-                        <!-- Updated Card with Image -->
-                        <div class="img-mask aspect-[3/4] bg-slate-100 overflow-hidden rounded-sm relative">
-                            <!-- Background Image -->
-                            <img src="images/container.png" alt="Master Trade Container" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800'">
-                            
-                            <!-- Overlay Text -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent flex flex-col p-10 justify-end">
-                                <div class="flex justify-between items-start opacity-60 mb-auto">
-                                    <div class="w-12 h-px bg-white"></div>
-                                    <span class="text-[8px] text-white uppercase font-bold tracking-widest">Serial: MT-KRL-24</span>
-                                </div>
-                                
-                                <div class="space-y-3">
-                                    <h3 class="text-3xl font-bold text-white tracking-tighter uppercase leading-none">Global <br>Import<br>Nexus</h3>
-                                    <p class="text-white/60 text-[10px] leading-relaxed max-w-[160px] uppercase font-bold tracking-tighter">Strategic distribution across the Kerala coastline.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Floating Micro-Interaction -->
-                        <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-2xl border border-slate-50 flex items-center gap-4 reveal-wrapper" style="transition-delay: 0.6s;">
-                            <div class="reveal-content flex items-center gap-4">
-                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-900">Track: In-Transit</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+              </a>
             </div>
-        </section>
-    </main>
-</section>
-    <script>
-        // Trigger animations
-        window.onload = () => {
-            document.getElementById('hero-section').classList.add('active');
+          </div>
+        </div>
+
+        <!-- Stable Grid - Controlled Proportions -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+          
+          <!-- Image 1: Main Feature (Landscape) -->
+          <div class="md:col-span-8 aspect-[16/9] md:aspect-[1.8/1] visual-tile reveal-wrapper active">
+            <div class="reveal-content h-full img-reveal-container">
+              <div class="img-mask">
+                <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125540_IMG_0974.JPG" alt="Industrial Logistics">
+              </div>
+              <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end">
+                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em] mb-1">Import Hub</span>
+                <p class="text-white text-lg font-bold tracking-tight">Heavy Logistics Units</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 2: Secondary (Compact Square) -->
+          <div class="md:col-span-4 aspect-square md:aspect-auto visual-tile reveal-wrapper active" style="transition-delay: 0.1s;">
+            <div class="reveal-content h-full img-reveal-container">
+              <div class="img-mask">
+                <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125540_IMG_0974.JPG" alt="Technology">
+              </div>
+              <div class="tile-overlay absolute inset-0 p-5 flex flex-col justify-end">
+                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Electronics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small Square Grid Duo -->
+          <div class="md:col-span-3 aspect-square visual-tile reveal-wrapper active" style="transition-delay: 0.2s;">
+            <div class="reveal-content h-full img-reveal-container">
+              <div class="img-mask">
+                <img src="images/Grass Mat-20251230T095742Z-3-001/Grass Mat/grass 1.jpg" alt="Textiles">
+              </div>
+              <div class="tile-overlay absolute inset-0 p-4 flex flex-col justify-end">
+                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Textiles</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 4: Landscape Secondary -->
+          <div class="md:col-span-5 aspect-[16/9] md:aspect-auto visual-tile reveal-wrapper active" style="transition-delay: 0.3s;">
+            <div class="reveal-content h-full img-reveal-container">
+              <div class="img-mask">
+                <img src="images/Masjid-20251230T095752Z-3-001/Masjid/20220125_191126 (1).jpg" alt="Infrastructure">
+              </div>
+              <div class="tile-overlay absolute inset-0 p-5 flex flex-col justify-end">
+                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 5: Balanced End Item -->
+          <div class="md:col-span-4 aspect-[16/9] md:aspect-auto visual-tile reveal-wrapper active" style="transition-delay: 0.4s;">
+            <div class="reveal-content h-full img-reveal-container">
+              <div class="img-mask">
+                <img src="images/Rigs-20251230T095835Z-3-001/Rigs/20220110124242_IMG_0955.JPG" alt="Automotive">
+              </div>
+              <div class="tile-overlay absolute inset-0 p-5 flex flex-col justify-end">
+                <span class="text-white/70 text-[8px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+ 
+
+
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
         }
-
-        // Custom Cursor Logic
-        const cursor = document.getElementById('cursor');
-        const follower = document.getElementById('cursor-follower');
-        
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            
-            cursor.style.transform = `translate3d(${x - 6}px, ${y - 6}px, 0)`;
-            follower.style.transform = `translate3d(${x - 20}px, ${y - 20}px, 0)`;
-        });
-
-        // Hover Effect for Cursor
-        const buttons = document.querySelectorAll('button, a');
-        buttons.forEach(btn => {
-            btn.addEventListener('mouseenter', () => {
-                follower.style.background = 'rgba(249, 115, 22, 0.1)';
-                follower.style.transform = `translate3d(${follower.offsetLeft}px, ${follower.offsetTop}px, 0) scale(1.5)`;
-                follower.style.borderColor = 'var(--orange)';
-            });
-            btn.addEventListener('mouseleave', () => {
-                follower.style.background = 'transparent';
-                follower.style.transform = `scale(1)`;
-                follower.style.borderColor = 'rgba(0,0,0,0.1)';
-            });
-        });
-
-        // Parallax Visual Movement
-        const hero = document.getElementById('hero-section');
-        const frame = document.querySelector('.visual-frame');
-        
-        hero.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const xPos = (clientX / window.innerWidth - 0.5) * 40;
-            const yPos = (clientY / window.innerHeight - 0.5) * 40;
-            
-            frame.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) rotateY(${xPos/2}deg) rotateX(${-yPos/2}deg)`;
-        });
-    </script>
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-wrapper').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

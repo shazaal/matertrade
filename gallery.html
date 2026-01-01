@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Collection | Full Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .img-mask { overflow: hidden; position: relative; height: 100%; width: 100%; }
+        .img-mask img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .visual-tile:hover img { transform: scale(1.08); }
+        .tile-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.4s ease;
+        }
+        .visual-tile:hover .tile-overlay { opacity: 1; }
+        
+        /* Smooth reveal for items */
+        .gallery-item { display: block; animation: fadeIn 0.6s ease forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="pt-24 pb-12 px-6 text-center">
+        <span class="text-blue-500 font-bold text-[10px] tracking-[0.5em] uppercase mb-4 block">Archive</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">The Full Collection</h1>
+        <p class="mt-4 text-slate-500 max-w-xl mx-auto text-sm">Explore our comprehensive range of industrial logistics, premium textiles, and infrastructure solutions.</p>
+    </header>
+
+    <div class="flex flex-wrap justify-center gap-4 mb-12 px-6">
+        <button onclick="filterSelection('all')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">All</button>
+        <button onclick="filterSelection('Masjid Carpet')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Masjid Carpet</button>
+        <button onclick="filterSelection('Floor coverings')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Floor coverings</button>
+        <button onclick="filterSelection('show pieces')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">show pieces</button>
+        <button onclick="filterSelection('Comfort Products')" class="px-6 py-2 rounded-full border border-slate-200 text-xs font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all">Comfort Products</button>
+    </div>
+
+    <main class="max-w-[1400px] mx-auto px-6 pb-20">
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            
+            <div class="gallery-item Floor coverings md:col-span-6 aspect-video visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125520_IMG_0973.JPG" alt="Logistics">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-8 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Floor coverings</span>
+                    <h3 class="text-white text-xl font-bold">Main Distribution Hub</h3>
+                </div>
+            </div>
+
+            <div class="gallery-item Floor coverings md:col-span-3 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125540_IMG_0974.JPG" alt="Textiles">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Textiles</span>
+                </div>
+            </div>
+
+            <div class="gallery-item Floor coverings md:col-span-3 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125605_IMG_0975.JPG" alt="Infrastructure">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Infrastructure</span>
+                </div>
+            </div>
+
+            <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125623_IMG_0976.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+            <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125642_IMG_0977.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125704_IMG_0978.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125723_IMG_0979.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125739_IMG_0980.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                        <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125754_IMG_0981.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125812_IMG_0982.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125832_IMG_0983.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125848_IMG_0984.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125907_IMG_0985.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                    <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125925_IMG_0986.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                              <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110125955_IMG_0987.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                              <div class="gallery-item Floor coverings md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Carpet-20251230T095742Z-3-001/Carpet/20220110130025_IMG_0988.JPG" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+            <!-- masjid carpet  -->
+                                           <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/20220125_191126 (1).jpg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                             <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/20220125_192007.jpg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/BILAL JUMAH MASJID KHANANGAD.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/EDARIKODE.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/Parappa juma masjid.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                                                 <div class="gallery-item Masjid Carpet md:col-span-4 aspect-square visual-tile overflow-hidden rounded-sm relative">
+                <div class="img-mask cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="images/Masjid-20251230T095752Z-3-001/Masjid/SALAFI masjid THRIKKARIPUR.jpeg" alt="Hardware">
+                </div>
+                <div class="tile-overlay absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                    <span class="text-white/70 text-[9px] font-bold uppercase tracking-[0.3em]">Hardware</span>
+                </div>
+            </div>
+                         
+            </div>
+    </main>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[999] hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-10 right-10 text-white text-4xl">&times;</button>
+        <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain">
+    </div>
+
+    <script>
+        // Filtering Logic
+        function filterSelection(category) {
+            const items = document.getElementsByClassName("gallery-item");
+            if (category == "all") category = "";
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.display = "none";
+                if (items[i].className.indexOf(category) > -1) {
+                    items[i].style.display = "block";
+                }
+            }
+        }
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            document.getElementById("lightbox-img").src = src;
+            document.getElementById("lightbox").classList.remove("hidden");
+        }
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
